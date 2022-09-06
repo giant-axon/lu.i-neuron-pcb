@@ -1,5 +1,7 @@
 # Lu.i[¹](#footnote-1) – an educational neuron PCB
 
+![](doc/photograph-coin.jpg)
+
 ## Circuits
 
 ## Networks
