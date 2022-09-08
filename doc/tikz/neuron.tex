@@ -1,0 +1,61 @@
+\definecolor{pcbcolour}{RGB}{90, 32, 90}
+
+\newcommand{\pcbNeuron}[5]{
+    % macro for sketch used in overviews
+    % arg1: name of nodes
+    % arg2: x
+    % arg3: y
+    % arg4: scale
+    % arg5: rotation
+    % %%%%%%%%%%%%% draw stuff
+    \def\x{#2};
+    \def\y{#3}
+
+    \ifthenelse{ \equal{#4}{} }{
+        \def\scale{1}
+    }{
+        \def\scale{#4}
+    }
+    \ifthenelse{ \equal{#5}{} }{
+        \def\rot{0}
+    }{
+        \def\rot{#5}
+    }
+
+    \coordinate (#1) at (\x, \y);
+
+    \node[anchor=center,
+          xshift=0.25cm * \scale,yshift=0.1cm * \scale, 
+          rotate around={\rot:(#1)},
+          ] (whitehead) at (#1)
+    {
+        % \scaledWidth
+        \scalebox{\scale}{
+            \includesvg[width=2cm]{neuron_filled.svg}
+        }
+    };
+
+    % %%%%%%%%%%%%%%%%%%% dendrites
+    \pgfmathsetmacro{\lengthDaX}{-0.003cm * \scale}
+    \pgfmathsetmacro{\lengthDaY}{0.022cm * \scale}
+    \coordinate[rotate around={\rot:(#1)}] (#1-Da) at (\x + \lengthDaX, \y + \lengthDaY);
+
+    \pgfmathsetmacro{\lengthDbX}{-0.023cm * \scale}
+    \pgfmathsetmacro{\lengthDbY}{0.005cm * \scale}
+    \coordinate[rotate around={\rot:(#1)}]  (#1-Db) at (\x + \lengthDbX, \y + \lengthDbY);
+
+    \pgfmathsetmacro{\lengthDcX}{-0.016cm * \scale}
+    \pgfmathsetmacro{\lengthDcY}{-0.0145cm * \scale}
+    \coordinate[rotate around={\rot:(#1)}]  (#1-Dc) at (\x + \lengthDcX, \y + \lengthDcY);
+
+    % %%%%%%%%%%%%%%%%%%% axons
+    \pgfmathsetmacro{\lengthAxX}{0.0400cm * \scale}
+    \pgfmathsetmacro{\lengthAxY}{-0.0130cm * \scale}
+    \coordinate[rotate around={\rot:(#1)}]  (#1-Aa) at (\x + \lengthAxX, \y + \lengthAxY);
+    \pgfmathsetmacro{\lengthAxX}{0.0395cm * \scale}
+    \pgfmathsetmacro{\lengthAxY}{-0.0140cm * \scale}
+    \coordinate[rotate around={\rot:(#1)}]  (#1-Ab) at (\x + \lengthAxX, \y + \lengthAxY);
+    \pgfmathsetmacro{\lengthAxX}{0.0390cm * \scale}
+    \pgfmathsetmacro{\lengthAxY}{-0.0150cm * \scale}
+    \coordinate[rotate around={\rot:(#1)}]  (#1-Ac) at (\x + \lengthAxX, \y + \lengthAxY);
+}

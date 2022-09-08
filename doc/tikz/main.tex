@@ -1,0 +1,36 @@
+\documentclass[crop,tikz]{standalone}
+
+\usepackage{svg}
+
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+
+\usepackage[outline]{contour}
+
+\usepackage{rotating}
+
+\begin{document}
+
+
+\input{neuron.tex}
+
+\begin{tikzpicture}[
+    scale=1.,
+    >=latex,
+    transform shape,
+]
+    \useasboundingbox (0,0) rectangle (7.6, 5);
+
+    \pcbNeuron{nOne}{2}{3}{1.5}{330}
+    \pcbNeuron{nTwo}{6}{2}{}{90}
+
+
+    \draw (nOne-Aa) -- (nTwo-Da);
+    \draw (nOne-Ab) -- (nTwo-Dc);
+    \draw (nOne-Ac) -- (nTwo-Db);
+
+
+\end{tikzpicture}
+\end{document}
