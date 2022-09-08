@@ -1,0 +1,50 @@
+\documentclass[crop,tikz]{standalone}
+
+\usepackage{svg}
+
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+
+\usepackage[outline]{contour}
+
+\usepackage{rotating}
+
+\begin{document}
+
+
+\input{neuron.tex}
+
+\begin{tikzpicture}[
+    scale=1.,
+    >=latex,
+    transform shape,
+]
+    \useasboundingbox (-5, -5) rectangle (5, 5);
+
+
+    \def\numNeurons{9}
+    \def\radius{4}
+    \def\scale{1.2}
+    \def\halfAngleConnection{10}
+
+
+    % neurons
+    \foreach \i in {1,...,\numNeurons}
+    \pcbNeuron{neuron-\i}{[rotate around={360 * \i / \numNeurons:(0, 0)}]\radius, 0}{\scale}{360 * \i / \numNeurons + 270} ;
+
+    % connections
+    \foreach \i in {1,...,\numNeurons}
+    {
+        \pgfmathtruncatemacro\nexts{ifthenelse(\i==\numNeurons, 1, round(\i+1))}
+        \pgfmathsetmacro\angleOut{360/\numNeurons * (\i-1) + 180 - \halfAngleConnection}
+        \pgfmathsetmacro\angleIn{360/\numNeurons * (\i) - 40 + \halfAngleConnection}
+        \draw (neuron-\i-Db) to[out=\angleOut,in=\angleIn] (neuron-\nexts-Ab);
+    }
+
+    % \draw (nOne-Aa) -- (nTwo-Da);
+
+
+\end{tikzpicture}
+\end{document}
