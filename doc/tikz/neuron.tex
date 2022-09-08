@@ -1,5 +1,11 @@
 \definecolor{pcbcolour}{RGB}{90, 32, 90}
 
+\tikzstyle{connection} = [
+    line width=1.0pt,
+    preaction={draw,white,line width=2pt, line cap=round},
+    line cap=round,
+    ]
+
 \newcommand{\pcbNeuron}[4]{
     % macro for sketch used in overviews
     % arg1: name of nodes

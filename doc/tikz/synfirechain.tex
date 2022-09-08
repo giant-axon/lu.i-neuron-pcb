@@ -21,18 +21,29 @@
     >=latex,
     transform shape,
 ]
-    \useasboundingbox (-5, -5) rectangle (5, 5);
+    \useasboundingbox (-5, -4) rectangle (5, 4);
 
-
-    \def\numNeurons{9}
+    \def\numNeurons{7}
+    \def\axlengthA{4.2}
+    \def\axlengthB{3.0}
     \def\radius{4}
-    \def\scale{1.2}
+    \def\scale{1.0}
     \def\halfAngleConnection{10}
 
 
+    % % draw ellipse on which the neurons lie
+    % \draw (0,0) ellipse (\axlengthA cm and \axlengthB cm );
+
     % neurons
     \foreach \i in {1,...,\numNeurons}
-    \pcbNeuron{neuron-\i}{[rotate around={360 * \i / \numNeurons:(0, 0)}]\radius, 0}{\scale}{360 * \i / \numNeurons + 270} ;
+    {
+        \pgfmathsetmacro\usedAngle{360 * \i / \numNeurons }
+
+        \pcbNeuron{neuron-\i}{
+            % [rotate around={\usedAngle:(0, 0)}] \radius, 0  % circle
+            $(0,0)+(\usedAngle:\axlengthA cm and \axlengthB cm)$  % ellipse
+        }{\scale}{\usedAngle + 290} ;
+    }
 
     % connections
     \foreach \i in {1,...,\numNeurons}
@@ -40,10 +51,8 @@
         \pgfmathtruncatemacro\nexts{ifthenelse(\i==\numNeurons, 1, round(\i+1))}
         \pgfmathsetmacro\angleOut{360/\numNeurons * (\i-1) + 180 - \halfAngleConnection}
         \pgfmathsetmacro\angleIn{360/\numNeurons * (\i) - 40 + \halfAngleConnection}
-        \draw (neuron-\i-Db) to[out=\angleOut,in=\angleIn] (neuron-\nexts-Ab);
+        \draw[connection] (neuron-\i-Db) to[out=\angleOut,in=\angleIn] (neuron-\nexts-Ab);
     }
-
-    % \draw (nOne-Aa) -- (nTwo-Da);
 
 
 \end{tikzpicture}

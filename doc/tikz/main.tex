@@ -23,13 +23,22 @@
 ]
     \useasboundingbox (0,0) rectangle (7.6, 5);
 
-    \pcbNeuron{nOne}{2, 3}{1}{330}
-    \pcbNeuron{nTwo}{6, 2}{1}{90}
+    % neurons with rotation and scaling
+    \pcbNeuron{nOne}{2, 4}{0.7}{330}
+    \pcbNeuron{nTwo}{6, 3}{1.5}{90}
+    % connections
+    \draw[connection] (nOne-Aa) -- (nTwo-Da);
+    \draw[connection] (nOne-Ab) -- (nTwo-Dc);
+    \draw[connection] (nOne-Ac) -- (nTwo-Db);
 
 
-    \draw (nOne-Aa) -- (nTwo-Da);
-    \draw (nOne-Ab) -- (nTwo-Dc);
-    \draw (nOne-Ac) -- (nTwo-Db);
+    % plain neurons without scaling or rotation
+    \pcbNeuron{mOne}{2, 1}{1}{0}
+    \pcbNeuron{mTwo}{6, 1}{1}{0}
+    % connections
+    \draw[connection] (mOne-Aa) -- (mTwo-Da);
+    \draw[connection] (mOne-Ab) -- (mTwo-Db);
+    \draw[connection] (mOne-Ac) -- (mTwo-Dc);
 
 
 \end{tikzpicture}
