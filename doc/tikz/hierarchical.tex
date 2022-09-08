@@ -1,0 +1,87 @@
+\documentclass[crop,tikz]{standalone}
+
+\usepackage{svg}
+
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+
+\usepackage[outline]{contour}
+
+\usepackage{rotating}
+
+\begin{document}
+
+
+\input{neuron.tex}
+
+\begin{tikzpicture}[
+    scale=1.,
+    >=latex,
+    transform shape,
+]
+    \useasboundingbox (-5, -4) rectangle (5, 4);
+
+    \def\numNeuronsI{2}
+    \def\numNeuronsH{3}
+    \def\numNeuronsO{2}
+    \def\scale{1.0}
+
+    \def\posXI{-4}
+    \def\posXH{-0.25}
+    \def\posXO{3.5}
+
+    \def\lengthSeparation{2.8}
+
+    \def\angleNeuron{10}
+    \def\angleOut{0}
+    \def\angleIn{180}
+
+    \foreach \i in {1,...,\numNeuronsI}
+    {
+        \pgfmathsetmacro\posYtmp{0 + \lengthSeparation * (\i - (\numNeuronsI + 1) / 2)}
+        \pcbNeuron{neuron-I\i}{
+            \posXI, \posYtmp
+            }{\scale}{\angleNeuron} ;
+    }
+
+    \foreach \i in {1,...,\numNeuronsH}
+    {
+        \pgfmathsetmacro\posYtmp{0 + \lengthSeparation * (\i - (\numNeuronsH + 1) / 2)}
+        \pcbNeuron{neuron-H\i}{
+            \posXH, \posYtmp
+            }{\scale}{\angleNeuron} ;
+    }
+
+    \foreach \i in {1,...,\numNeuronsO}
+    {
+        \pgfmathsetmacro\posYtmp{0 + \lengthSeparation * (\i - (\numNeuronsO + 1) / 2)}
+        \pcbNeuron{neuron-O\i}{
+            \posXO, \posYtmp
+            }{\scale}{\angleNeuron} ;
+    }
+
+    % %%%%%%%%%%%%% connections
+    % % input hidden
+    \draw[connection] (neuron-I1-Ac) to[out=\angleOut,in=\angleIn] (neuron-H1-Dc);
+    \draw[connection] (neuron-I1-Ab) to[out=\angleOut,in=\angleIn] (neuron-H2-Dc);
+    \draw[connection] (neuron-I1-Aa) to[out=\angleOut,in=\angleIn] (neuron-H3-Dc);
+    %
+    \draw[connection] (neuron-I2-Ac) to[out=\angleOut,in=\angleIn] (neuron-H1-Da);
+    \draw[connection] (neuron-I2-Ab) to[out=\angleOut,in=\angleIn] (neuron-H2-Da);
+    \draw[connection] (neuron-I2-Aa) to[out=\angleOut,in=\angleIn] (neuron-H3-Da);
+
+    % % hidden output
+    \draw[connection] (neuron-H1-Ac) to[out=\angleOut,in=\angleIn] (neuron-O1-Da);
+    \draw[connection] (neuron-H1-Aa) to[out=\angleOut,in=\angleIn] (neuron-O2-Da);
+    %
+    \draw[connection] (neuron-H2-Ac) to[out=\angleOut,in=\angleIn] (neuron-O1-Db);
+    \draw[connection] (neuron-H2-Aa) to[out=\angleOut,in=\angleIn] (neuron-O2-Db);
+    %
+    \draw[connection] (neuron-H3-Ac) to[out=\angleOut,in=\angleIn] (neuron-O1-Dc);
+    \draw[connection] (neuron-H3-Aa) to[out=\angleOut,in=\angleIn] (neuron-O2-Dc);
+
+
+\end{tikzpicture}
+\end{document}
