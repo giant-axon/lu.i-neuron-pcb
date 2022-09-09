@@ -21,11 +21,11 @@
     >=latex,
     transform shape,
 ]
-\useasboundingbox[fill=white] (-7, -4) rectangle (7, 4);
+    \useasboundingbox[fill=white] (-7, -2.7) rectangle (7, 2.7);
 
     \def\numNeuronsI{2}
-    \def\numNeuronsH{3}
-    \def\numNeuronsO{2}
+    \def\numNeuronsH{2}
+    \def\numNeuronsO{1}
     \def\scale{1.0}
 
     \def\posXI{-4}
@@ -66,21 +66,15 @@
     % % input hidden
     \draw[connection] (neuron-I1-Ac) to[out=\angleOut,in=\angleIn] (neuron-H1-Dc);
     \draw[connection] (neuron-I1-Ab) to[out=\angleOut,in=\angleIn] (neuron-H2-Dc);
-    \draw[connection] (neuron-I1-Aa) to[out=\angleOut,in=\angleIn] (neuron-H3-Dc);
     %
     \draw[connection] (neuron-I2-Ac) to[out=\angleOut,in=\angleIn] (neuron-H1-Da);
     \draw[connection] (neuron-I2-Ab) to[out=\angleOut,in=\angleIn] (neuron-H2-Da);
-    \draw[connection] (neuron-I2-Aa) to[out=\angleOut,in=\angleIn] (neuron-H3-Da);
 
     % % hidden output
-    \draw[connection] (neuron-H1-Ac) to[out=\angleOut,in=\angleIn] (neuron-O1-Da);
-    \draw[connection] (neuron-H1-Aa) to[out=\angleOut,in=\angleIn] (neuron-O2-Da);
+    \draw[connection] (neuron-H1-Ac) to[out=\angleOut,in=\angleIn] (neuron-O1-Dc);
     %
-    \draw[connection] (neuron-H2-Ac) to[out=\angleOut,in=\angleIn] (neuron-O1-Db);
-    \draw[connection] (neuron-H2-Aa) to[out=\angleOut,in=\angleIn] (neuron-O2-Db);
+    \draw[connection] (neuron-H2-Ac) to[out=\angleOut,in=\angleIn] (neuron-O1-Da);
     %
-    \draw[connection] (neuron-H3-Ac) to[out=\angleOut,in=\angleIn] (neuron-O1-Dc);
-    \draw[connection] (neuron-H3-Aa) to[out=\angleOut,in=\angleIn] (neuron-O2-Dc);
 
 
 \end{tikzpicture}

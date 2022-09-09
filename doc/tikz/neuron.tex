@@ -39,12 +39,12 @@
     };
 
     % %%%%%%%%%%%%%%%%%%% dendrites
-    \pgfmathsetmacro{\lengthDaX}{-0.10cm * \argScale}
-    \pgfmathsetmacro{\lengthDaY}{0.62cm * \argScale}
+    \pgfmathsetmacro{\lengthDaX}{-0.09cm * \argScale}
+    \pgfmathsetmacro{\lengthDaY}{0.64cm * \argScale}
     \coordinate[rotate around={\rot:(#1)}] (#1-Da) at ([xshift=\lengthDaX, yshift=\lengthDaY] #1);
 
-    \pgfmathsetmacro{\lengthDbX}{-0.68cm * \argScale}
-    \pgfmathsetmacro{\lengthDbY}{0.13cm * \argScale}
+    \pgfmathsetmacro{\lengthDbX}{-0.685cm * \argScale}
+    \pgfmathsetmacro{\lengthDbY}{0.138cm * \argScale}
     \coordinate[rotate around={\rot:(#1)}]  (#1-Db) at ([xshift=\lengthDbX, yshift=\lengthDbY] #1);
 
     \pgfmathsetmacro{\lengthDcX}{-0.47cm * \argScale}
