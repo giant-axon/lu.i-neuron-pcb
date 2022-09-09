@@ -22,6 +22,10 @@ Multiple boards can be connected via jumper wires to form networks.
 ## Circuits
 
 ## Networks
+<img src="doc/tikz/synfirechain.svg" width="600" />
+
+<img src="doc/tikz/hierarchical.svg" width="600" />
+
 
 ## Fabrication
 
