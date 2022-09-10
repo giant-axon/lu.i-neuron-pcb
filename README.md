@@ -21,12 +21,21 @@ Multiple boards can be connected via jumper wires to form networks.
 
 ## Circuits
 
-## Networks
+## Example Networks
+Because the neurons can be connected with each other, we can build networks out of them and in the following we want to describe some simple networks.
 
+### Synfire chain
 ![](doc/tikz/synfirechain.svg)
+The name synfire chain is an abbreviation for synchronous firing chain and describes a circular feed-forward chain, in which activity travels from layer to layer.
+When suitably configured, a spike in one of our neurons will elicit a consecutive spike in the next neuron in the chain.
 
+This can also be put in a circular shape where the activity travels indefinitely.
+![](doc/tikz/synfirering.svg)
+
+### General hierarchical network
 ![](doc/tikz/hierarchical.svg)
 
+### Solving the XOR problem rate based
 ![](doc/tikz/hierarchical_xor.svg)
 
 

@@ -23,14 +23,12 @@
 ]
     \useasboundingbox[fill=white] (-11, -5) rectangle (11, 5);
 
-    \def\numNeurons{5}
+    \def\numNeurons{7}
+    \def\axlengthA{5.6}
+    \def\axlengthB{4.0}
+    \def\radius{4}
     \def\scale{1.3}
     \def\halfAngleConnection{10}
-    \def\angleNeuron{10}
-    \def\posXoffset{-10.4}
-    \def\lengthSeparation{3.5}
-    \def\angleOut{-20}
-    \def\angleIn{180}
 
 
     % % draw ellipse on which the neurons lie
@@ -39,18 +37,21 @@
     % neurons
     \foreach \i in {1,...,\numNeurons}
     {
+        \pgfmathsetmacro\usedAngle{360 * \i / \numNeurons }
+
         \pcbNeuron{neuron-\i}{
-            \posXoffset + \i * \lengthSeparation, 0
-        }{\scale}{\angleNeuron} ;
+            % [rotate around={\usedAngle:(0, 0)}] \radius, 0  % circle
+            $(0,0)+(\usedAngle:\axlengthA cm and \axlengthB cm)$  % ellipse
+        }{\scale}{\usedAngle + 290} ;
     }
 
     % connections
     \foreach \i in {1,...,\numNeurons}
     {
         \pgfmathtruncatemacro\nexts{ifthenelse(\i==\numNeurons, 1, round(\i+1))}
-        \ifthenelse{\equal{\i}{\numNeurons}}{}{
-            \draw[connection] (neuron-\i-Ab) to[out=\angleOut,in=\angleIn] (neuron-\nexts-Db);
-        }
+        \pgfmathsetmacro\angleOut{360/\numNeurons * (\i-1) + 180 - \halfAngleConnection}
+        \pgfmathsetmacro\angleIn{360/\numNeurons * (\i) - 40 + \halfAngleConnection}
+        \draw[connection] (neuron-\i-Db) to[out=\angleOut,in=\angleIn] (neuron-\nexts-Ab);
     }
 
 
