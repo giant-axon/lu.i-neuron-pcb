@@ -19,8 +19,6 @@ Multiple boards can be connected via jumper wires to form networks.
 
 ![](doc/animation.gif)
 
-## Circuits
-
 ## Example Networks
 Because the neurons can be connected with each other, we can build networks out of them and in the following we want to describe some simple networks.
 
@@ -38,7 +36,5 @@ This can also be put in a circular shape where the activity travels indefinitely
 ### Solving the XOR problem rate based
 ![](doc/tikz/hierarchical_xor.svg)
 
-
-## Fabrication
 
 <a name="footnote-1">¹</a> The name »Lu.i« (phonetic notation of »Louis«) is a tribute to Louis E. Lapicque, who first formulated the leaky integrate-and-fire equations modeling the dynamics of a neuron.
