@@ -37,4 +37,19 @@ This can also be put in a circular shape where the activity travels indefinitely
 ![](doc/tikz/hierarchical_xor.svg)
 
 
+## Circuits
+
+### Leaky integrator
+
+![leaky-integrator](https://user-images.githubusercontent.com/175670/189528439-84f5fa99-e8dd-4edf-aba1-f1f1033e523d.png)
+
+### Firing mechanism
+![reset](https://user-images.githubusercontent.com/175670/189528443-891a017c-b192-4f26-8734-1af3a4c02263.png)
+and refractory period
+
+### Synapses
+![synapse](https://user-images.githubusercontent.com/175670/189528447-8921455d-16ae-4b91-8e19-7236ed268995.png)
+
+---
+
 <a name="footnote-1">¹</a> The name »Lu.i« (phonetic notation of »Louis«) is a tribute to Louis E. Lapicque, who first formulated the leaky integrate-and-fire equations modeling the dynamics of a neuron.
