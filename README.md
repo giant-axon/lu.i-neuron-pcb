@@ -40,15 +40,13 @@ This can also be put in a circular shape where the activity travels indefinitely
 ## Circuits
 
 ### Leaky integrator
+![leaky-integrator](https://user-images.githubusercontent.com/175670/189981274-81cd3b70-414f-4f70-bc67-193bad2581c4.png)
 
-![leaky-integrator](https://user-images.githubusercontent.com/175670/189528439-84f5fa99-e8dd-4edf-aba1-f1f1033e523d.png)
-
-### Firing mechanism
-![reset](https://user-images.githubusercontent.com/175670/189528443-891a017c-b192-4f26-8734-1af3a4c02263.png)
-and refractory period
+### Firing mechanism and refractory period
+![reset](https://user-images.githubusercontent.com/175670/189981287-a6f1e051-edd6-414d-b50f-ba3afb94ade9.png)
 
 ### Synapses
-![synapse](https://user-images.githubusercontent.com/175670/189528447-8921455d-16ae-4b91-8e19-7236ed268995.png)
+![synapse](https://user-images.githubusercontent.com/175670/189981309-f7842ae6-b764-4464-a458-433a2358af77.png)
 
 ---
 
