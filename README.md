@@ -8,6 +8,8 @@ The neuron emits a short pulse whenever the membrane potential crosses a predefi
 Neurons communicate by exchanging these *spikes*.
 Multiple boards can be connected via jumper wires to form networks.
 
+For inquiries feel free to contact us at [info@giantaxon.org](mailto:info@giantaxon.org).
+
 ## Features
 
 - fully analog implementation of the leaky integrate-and-fire model
