@@ -42,14 +42,7 @@ The LIF model, including the spiking behavior when the threshold is reached can 
 
 ## Circuits
 
-### Leaky integrator
-![leaky-integrator](https://user-images.githubusercontent.com/175670/189981274-81cd3b70-414f-4f70-bc67-193bad2581c4.png)
-
-### Firing mechanism and refractory period
-![reset](https://user-images.githubusercontent.com/175670/189981287-a6f1e051-edd6-414d-b50f-ba3afb94ade9.png)
-
-### Synapses
-![synapse](https://user-images.githubusercontent.com/175670/189981309-f7842ae6-b764-4464-a458-433a2358af77.png)
+![schematics](doc/figures/pcb/overview.png)
 
 ---
 
