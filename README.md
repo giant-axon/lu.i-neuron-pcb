@@ -19,22 +19,16 @@ Multiple boards can be connected via jumper wires to form networks.
 
 ![](doc/animation.webp)
 
+
 ## Example Networks
-Because the neurons can be connected with each other, we can build networks out of them and in the following we want to describe some simple networks.
 
-### Synfire chain
-![](doc/figures/example-networks/synfirechain.png)
-The name synfire chain is an abbreviation for synchronous firing chain and describes a circular feed-forward chain, in which activity travels from layer to layer.
-When suitably configured, a spike in one of our neurons will elicit a consecutive spike in the next neuron in the chain.
+Very much resembling the structure of the nervous system, multiple *lu.i* boards can be connected to form even complex neural networks.
+The latter may simply serve illustrative purposes, mimick biological behavior, or even solve functional tasks.
+The following hierarchical network, e.g., implements an *exclusive OR* (XOR).
 
-This can also be put in a circular shape where the activity travels indefinitely.
-![](doc/figures/example-networks/synfirering.png)
-
-### General hierarchical network
-![](doc/figures/example-networks/hierarchical.png)
-
-### Solving the XOR problem rate based
 ![](doc/figures/example-networks/hierarchical_xor.png)
+
+For a more extensive list of example networks please refer to [*lu.i*'s documentation](doc/example-networks.md).
 
 
 ## Circuits
