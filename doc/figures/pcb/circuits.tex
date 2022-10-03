@@ -1,0 +1,69 @@
+\tikzset{
+    leaky-integrator/.pic = {
+	\draw (0, 0) node[ground] {} to[C, l=\SI{4.7}{\micro\nothing}] ++(0.0, 1.4) coordinate (mem);
+
+	\draw (mem) to[short, *-] ++(-2.0, 0.0) to[potentiometer, n=poti 1] ++(0.0, -1.4) coordinate (tmp);
+	\draw (mem) to[short, -o] ++(1.0, 0.0) node[right] {$V_\text{mem}$};
+	\draw (poti 1.wiper) to[short, -*] (poti 1.wiper |- mem);
+	\draw (tmp) node[op amp, anchor=out, scale=0.8, yscale=-1] (buffer) {};
+	\draw (buffer.out) to[short, *-] ++(0.0, -1.0) coordinate (tmp) to (tmp -| buffer.-) to (buffer.-);
+
+	\draw (buffer.+) ++(-0.6, 0.7) to[potentiometer, n=poti 2] ++(0.0, -1.4);
+	\draw (buffer.+) to (poti 2.wiper);
+
+	\draw (poti 2.right) node[ground] {};
+	\draw (poti 2.left) node[vdd] {$V_\text{DD}$};
+    },
+    synapse/.pic = {
+	\draw (3.5, 0) node[right] {$V_\text{mem}$} to[short, o-] ++(-1.0, 0.0) to[potentiometer, n=poti 1, -*] ++(-1.4, 0.0) coordinate (tmp);
+
+	\draw (poti 1.left) to[short, -*] ++(0.3, 0.0) |- (poti 1.wiper);
+
+	\draw (tmp) to ++(0.0,  0.5) to[Tpmos, n=m2] ++(0.0,  1.6) node[vdd] {$V_\text{DD}$};
+	\draw (tmp) to ++(0.0, -0.5) to[Tnmos, n=m1, mirror] ++(0.0, -1.6) to ($(m1.G -| m1.D) + (0.0, -1.5)$) node[tlground] {};
+
+	\draw (m1.G) to ++(-1.9, 0.0) coordinate (tmp);
+	\draw (tmp) to[R, l_=\SI{100}{\kilo\nothing}, *-] ++(0.0, -1.5) node[tlground] {};
+	\draw (tmp) to ++(-0.5, 0.0) to ++(0.0, 0.0) to[short, -o] ++(-0.5, 0.0) node[left] {inh. input};
+	
+	\draw (m2.G) node[invschmitt port, anchor=out] (inv) {};
+	\draw (inv.in) to (m2.G -| tmp) coordinate (tmp);
+	\draw (tmp) to[R, l_=\SI{100}{\kilo\nothing}, *-] ++(0.0, -1.5) node[tlground] {};
+	\draw (tmp) to ++(-0.5, 0.0) to ++(0.0, -0.0) to[short, -o] ++(-0.5, 0.0) node[left] {exc. input};
+    },
+    reset/.pic = {
+	% threshold comparator
+	\node[op amp, yscale=-1] (thresh comp) at (-0.5, 0) {};
+	\draw (thresh comp.out) to ++(1, 0) node[invschmitt port, anchor=in] (inv) {};
+
+	% refractory comparator
+	\node[op amp, xscale=-1, yscale=-1] (refrac comp) at (0, -4) {};
+	\draw (refrac comp.+) to[short, -o] ++(0.2, 0.0) node[right] {$V_\text{DD}/2$};
+
+	% refractory integrator
+	\draw (refrac comp.-) to[short, -*] ++(2.0, 0.0) coordinate (tmp);
+	\draw (tmp) to[C, l_=\SI{1}{\micro\nothing}] ++(0.0, -1.4) node[ground] {};
+	\draw (tmp) to[short, -*] ++(1.0, 0.0) coordinate (tmp)
+		to[R, l=\SI{22}{\kilo\nothing}] ++(0.0,  1.4) node[vdd] {$V_\text{DD}$};
+
+	% transistor to initiate refractory period
+	\draw (tmp) to[Tnmos, n=m1] ++(0.0, -1.4) node[ground] {};
+	\draw (inv.out) to (inv.out -| m1.G) to (m1.G);
+
+	% reset transistor
+	\draw (refrac comp.out) to ++(-0.5, 0.0) node[nmos, anchor=G, xscale=-1.0, scale=0.82] (m2) {};
+	\draw (m2.D) to[R, l_=\SI{22}{\nothing}] ++(0.0, 1.4) to (m2.D |- thresh comp.-)
+		edge (thresh comp.-)
+		to[short, *-o] ++(-1.0, 0.0) node[left] {$V_\text{mem}$};
+	\draw (m2.S) node[ground] {};
+
+	% resistor network determining threshold voltage
+	\draw (thresh comp.+) to[short, -*] ++(0.0, 1.5) coordinate (tmp);
+	\draw (tmp) to[short, -*] ++(-1.0, 0.0) coordinate (tmp left);
+	\draw (tmp left) to[R, l=\SI{100}{\kilo\nothing}] ++(0.0, 1.4) node[vdd] {$V_\text{DD}$};
+	\draw (tmp left) to[R, l_=\SI{100}{\kilo\nothing}] ++(0.0, -1.4) node[ground] {};
+	\draw (tmp) to[R, l=\SI{100}{\kilo\nothing}, -*] (tmp -| thresh comp.out) coordinate (tmp);
+	\draw (tmp) to[short, -*] (thresh comp.out);
+	\draw (tmp) to[R, l_=\SI{10}{\kilo\nothing}] ++(0.0, 1.4) node[vdd] {$V_\text{DD}$};
+    },
+}
