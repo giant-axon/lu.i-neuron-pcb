@@ -28,7 +28,7 @@ The following hierarchical network, e.g., implements an *exclusive OR* (XOR).
 
 ![](doc/figures/example-networks/hierarchical_xor.png)
 
-For a more extensive list of example networks please refer to [*lu.i*'s documentation](doc/example-networks.md).
+For a more extensive list of example networks please refer to [lu.i's documentation](doc/example-networks.md).
 
 
 ## Circuits
