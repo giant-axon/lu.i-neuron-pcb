@@ -1,0 +1,46 @@
+\documentclass[convert={density=300,outext=.png}]{standalone}
+\input{preamble.tex}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    scale=1.,
+    >=latex,
+    transform shape,
+]
+    \useasboundingbox[fill=white] (-11, -5) rectangle (11, 5);
+
+    \def\numNeurons{7}
+    \def\axlengthA{5.6}
+    \def\axlengthB{4.0}
+    \def\radius{4}
+    \def\scale{1.3}
+    \def\halfAngleConnection{10}
+
+
+    % % draw ellipse on which the neurons lie
+    % \draw (0,0) ellipse (\axlengthA cm and \axlengthB cm );
+
+    % neurons
+    \foreach \i in {1,...,\numNeurons}
+    {
+        \pgfmathsetmacro\usedAngle{360 * \i / \numNeurons }
+
+        \pcbNeuron{neuron-\i}{
+            % [rotate around={\usedAngle:(0, 0)}] \radius, 0  % circle
+            $(0,0)+(\usedAngle:\axlengthA cm and \axlengthB cm)$  % ellipse
+        }{\scale}{\usedAngle + 290} ;
+    }
+
+    % connections
+    \foreach \i in {1,...,\numNeurons}
+    {
+        \pgfmathtruncatemacro\nexts{ifthenelse(\i==\numNeurons, 1, round(\i+1))}
+        \pgfmathsetmacro\angleOut{360/\numNeurons * (\i-1) + 180 - \halfAngleConnection}
+        \pgfmathsetmacro\angleIn{360/\numNeurons * (\i) - 40 + \halfAngleConnection}
+        \draw[connection] (neuron-\i-Db) to[out=\angleOut,in=\angleIn] (neuron-\nexts-Ab);
+    }
+
+
+\end{tikzpicture}
+\end{document}

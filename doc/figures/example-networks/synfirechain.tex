@@ -1,0 +1,49 @@
+\documentclass[convert={density=300,outext=.png}]{standalone}
+\input{preamble.tex}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    scale=1.,
+    >=latex,
+    transform shape,
+]
+    \def\numNeurons{5}
+    \def\scale{1.3}
+    \def\halfAngleConnection{10}
+    \def\angleNeuron{10}
+    \def\posXoffset{-10.4}
+    \def\lengthSeparation{3.5}
+    \def\angleOut{-20}
+    \def\angleIn{180}
+
+
+    % % draw ellipse on which the neurons lie
+    % \draw (0,0) ellipse (\axlengthA cm and \axlengthB cm );
+
+    % neurons
+    \foreach \i in {1,...,\numNeurons}
+    {
+        \pcbNeuron{neuron-\i}{
+            \posXoffset + \i * \lengthSeparation, 0
+        }{\scale}{\angleNeuron} ;
+    }
+
+    % connections
+    \foreach \i in {1,...,\numNeurons}
+    {
+        \pgfmathtruncatemacro\nexts{ifthenelse(\i==\numNeurons, 1, round(\i+1))}
+        \ifthenelse{\equal{\i}{\numNeurons}}{}{
+            \draw[connection] (neuron-\i-Ab) to[out=\angleOut,in=\angleIn] (neuron-\nexts-Db);
+        }
+    }
+
+    \begin{scope}[on background layer]
+    	\node[minimum width=20cm, fit=(current bounding box.north west) (current bounding box.south east), inner sep=2pt, fill=white] {};
+    \end{scope}
+
+    \begin{scope}[on background layer]
+    	\node[minimum width=20cm, fit=(current bounding box.north west) (current bounding box.south east), inner sep=2pt, fill=white] {};
+    \end{scope}
+\end{tikzpicture}
+\end{document}
