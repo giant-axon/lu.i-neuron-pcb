@@ -29,6 +29,17 @@ The following hierarchical network, e.g., implements an *exclusive OR* (XOR).
 For a more extensive list of example networks please refer to [lu.i's documentation](doc/example-networks.md).
 
 
+## Model
+The neuron implemented on the PCBs is called Leaky Integrate-and-Fire (LIF) model.
+For this model, the membrane voltage follows the dynamics described by the differential equation
+
+$$
+    C_\text{mem} \frac{\mathrm{d}V_\text{mem}}{\mathrm{d}t} = - g_\text{leak} \left(V_\text{mem} - V_\text{leak} \right) + I_{\text{syn}}.
+$$
+
+In short, the neuron sums up its input $I_\text{syn}$ and decays back to the leak voltage $V_\text{leak}$.
+The LIF model, including the spiking behavior when the threshold is reached can be implemented in electric circuits.
+
 ## Circuits
 
 ### Leaky integrator
