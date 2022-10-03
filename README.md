@@ -6,7 +6,7 @@ The neuron emits a short pulse whenever the membrane potential crosses a predefi
 Neurons communicate by exchanging these *spikes*.
 Multiple boards can be connected via jumper wires to form networks.
 
-![](doc/photograph-coin.jpg)
+![](doc/figures/photograph-coin.jpg)
 
 ## Features
 
@@ -17,7 +17,7 @@ Multiple boards can be connected via jumper wires to form networks.
 - VU-meter-style visualization of the membrane potential and spike LED
 - optimized for low-cost production (~ 3 € per neuron)
 
-![](doc/animation.webp)
+![](doc/figures/animation/animation.webp)
 
 
 ## Example Networks
