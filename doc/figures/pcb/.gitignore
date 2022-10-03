@@ -1,0 +1,10 @@
+Session.vim
+
+# temporary files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.pdf
+*.dvi
+*.synctex.gz

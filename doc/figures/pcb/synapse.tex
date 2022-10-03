@@ -1,0 +1,29 @@
+\documentclass[convert={density=300,outext=.png}]{standalone}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\begin{tikzpicture}
+	\draw (3.5, 0) node[right] {$V_\text{mem}$} to[short, o-] ++(-1.0, 0.0) to[potentiometer, n=poti 1, -*] ++(-1.4, 0.0) coordinate (tmp);
+
+	\draw (poti 1.left) to[short, -*] ++(0.3, 0.0) |- (poti 1.wiper);
+
+	\draw (tmp) to ++(0.0,  0.5) to[Tpmos, n=m2] ++(0.0,  1.6) node[vdd] {$V_\text{DD}$};
+	\draw (tmp) to ++(0.0, -0.5) to[Tnmos, n=m1, mirror] ++(0.0, -1.6) to ($(m1.G -| m1.D) + (0.0, -1.5)$) node[tlground] {};
+
+	\draw (m1.G) to ++(-1.9, 0.0) coordinate (tmp);
+	\draw (tmp) to[R, l_=\SI{100}{\kilo\nothing}, *-] ++(0.0, -1.5) node[tlground] {};
+	\draw (tmp) to ++(-0.5, 0.0) to ++(0.0, 0.0) to[short, -o] ++(-0.5, 0.0) node[left] {inh. input};
+	
+	\draw (m2.G) node[invschmitt port, anchor=out] (inv) {};
+	\draw (inv.in) to (m2.G -| tmp) coordinate (tmp);
+	\draw (tmp) to[R, l_=\SI{100}{\kilo\nothing}, *-] ++(0.0, -1.5) node[tlground] {};
+	\draw (tmp) to ++(-0.5, 0.0) to ++(0.0, -0.0) to[short, -o] ++(-0.5, 0.0) node[left] {exc. input};
+
+	\begin{scope}[on background layer]
+		\node[minimum width=20cm, fit=(current bounding box.north west) (current bounding box.south east), inner sep=2pt, fill=white] {};
+	\end{scope}
+\end{tikzpicture}
+
+\end{document}

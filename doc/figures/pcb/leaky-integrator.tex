@@ -1,0 +1,27 @@
+\documentclass[convert={density=300,outext=.png}]{standalone}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\begin{tikzpicture}
+	\draw (0, 0) node[ground] {} to[C, l=\SI{4.7}{\micro\nothing}] ++(0.0, 1.4) coordinate (mem);
+
+	\draw (mem) to[short, *-] ++(-2.0, 0.0) to[potentiometer, n=poti 1] ++(0.0, -1.4) coordinate (tmp);
+	\draw (mem) to[short, -o] ++(1.0, 0.0) node[right] {$V_\text{mem}$};
+	\draw (poti 1.wiper) to[short, -*] (poti 1.wiper |- mem);
+	\draw (tmp) node[op amp, anchor=out, scale=0.8, yscale=-1] (buffer) {};
+	\draw (buffer.out) to[short, *-] ++(0.0, -1.0) coordinate (tmp) to (tmp -| buffer.-) to (buffer.-);
+
+	\draw (buffer.+) ++(-0.6, 0.7) to[potentiometer, n=poti 2] ++(0.0, -1.4);
+	\draw (buffer.+) to (poti 2.wiper);
+
+	\draw (poti 2.right) node[ground] {};
+	\draw (poti 2.left) node[vdd] {$V_\text{DD}$};
+	
+	\begin{scope}[on background layer]
+		\node[minimum width=20cm, fit=(current bounding box.north west) (current bounding box.south east), inner sep=2pt, fill=white] {};
+	\end{scope}
+\end{tikzpicture}
+
+\end{document}
