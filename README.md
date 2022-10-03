@@ -17,7 +17,7 @@ Multiple boards can be connected via jumper wires to form networks.
 - VU-meter-style visualization of the membrane potential and spike LED
 - optimized for low-cost production (~ 3 € per neuron)
 
-![](doc/animation.gif)
+![](doc/animation.webp)
 
 ## Example Networks
 Because the neurons can be connected with each other, we can build networks out of them and in the following we want to describe some simple networks.
