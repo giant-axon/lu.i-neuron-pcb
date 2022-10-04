@@ -1,44 +1,13 @@
 \documentclass[varwidth=20cm, convert={density=300,outext=.png}]{standalone}
 
 \input{preamble.tex}
+\input{circuits.tex}
 
 \begin{document}
 
 \begin{center}
 \begin{tikzpicture}
-	% threshold comparator
-	\node[op amp, yscale=-1] (thresh comp) at (-0.5, 0) {};
-	\draw (thresh comp.out) to ++(1, 0) node[invschmitt port, anchor=in] (inv) {};
-
-	% refractory comparator
-	\node[op amp, xscale=-1, yscale=-1] (refrac comp) at (0, -4) {};
-	\draw (refrac comp.+) to[short, -o] ++(0.2, 0.0) node[right] {$V_\text{DD}/2$};
-
-	% refractory integrator
-	\draw (refrac comp.-) to[short, -*] ++(2.0, 0.0) coordinate (tmp);
-	\draw (tmp) to[C, l_=\SI{1}{\micro\nothing}] ++(0.0, -1.4) node[ground] {};
-	\draw (tmp) to[short, -*] ++(1.0, 0.0) coordinate (tmp)
-		to[R, l=\SI{22}{\kilo\nothing}] ++(0.0,  1.4) node[vdd] {$V_\text{DD}$};
-
-	% transistor to initiate refractory period
-	\draw (tmp) to[Tnmos, n=m1] ++(0.0, -1.4) node[ground] {};
-	\draw (inv.out) to (inv.out -| m1.G) to (m1.G);
-
-	% reset transistor
-	\draw (refrac comp.out) to ++(-0.5, 0.0) node[nmos, anchor=G, xscale=-1.0, scale=0.82] (m2) {};
-	\draw (m2.D) to[R, l_=\SI{22}{\nothing}] ++(0.0, 1.4) to (m2.D |- thresh comp.-)
-		edge (thresh comp.-)
-		to[short, *-o] ++(-1.0, 0.0) node[left] {$V_\text{mem}$};
-	\draw (m2.S) node[ground] {};
-
-	% resistor network determining threshold voltage
-	\draw (thresh comp.+) to[short, -*] ++(0.0, 1.5) coordinate (tmp);
-	\draw (tmp) to[short, -*] ++(-1.0, 0.0) coordinate (tmp left);
-	\draw (tmp left) to[R, l=\SI{100}{\kilo\nothing}] ++(0.0, 1.4) node[vdd] {$V_\text{DD}$};
-	\draw (tmp left) to[R, l_=\SI{100}{\kilo\nothing}] ++(0.0, -1.4) node[ground] {};
-	\draw (tmp) to[R, l=\SI{100}{\kilo\nothing}, -*] (tmp -| thresh comp.out) coordinate (tmp);
-	\draw (tmp) to[short, -*] (thresh comp.out);
-	\draw (tmp) to[R, l_=\SI{10}{\kilo\nothing}] ++(0.0, 1.4) node[vdd] {$V_\text{DD}$};
+	\pic at (0, 0) {reset};
 
 	\begin{scope}[on background layer]
 		\node[minimum width=20cm, fit=(current bounding box.north west) (current bounding box.south east), inner sep=2pt, fill=white] {};

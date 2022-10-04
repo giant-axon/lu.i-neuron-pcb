@@ -8,8 +8,12 @@
 \begin{center}
 \begin{tikzpicture}
 	\pic at (-5.0,  0) {synapse};
-	\pic at (-3.5, -6.5) {leaky-integrator};
+	\pic at (-2.8, -6.9) {leaky-integrator};
 	\pic at ( 5.0, -1.3) {reset};
+
+	\node[right, white, fill=black] at (-9.5,  2.9) {\large\bfseries \vphantom{gl}synapse (\texttimes 3)};
+	\node[right, white, fill=black] at (-9.5, -7.5) {\large\bfseries \vphantom{gl}leaky integrator};
+	\node[left, white, fill=black] at (10.3, 2.9) {\large\bfseries \vphantom{gl}threshold + reset};
 
 	\draw[gray] (-9.3, -4) -- (-0.5, -4);
 	\draw[gray] (0, 2.9) -- (0, -7.4);
