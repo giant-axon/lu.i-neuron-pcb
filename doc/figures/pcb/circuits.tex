@@ -1,15 +1,22 @@
+\newcommand\namevalue[2]{#1 \\ {\color{gray}\footnotesize #2}}
 \tikzset{
     leaky-integrator/.pic = {
-	\draw (0, 0) node[ground] {} to[C, l=\SI{4.7}{\micro\nothing}] ++(0.0, 1.4) coordinate (mem);
+	\draw (0, 0) node[ground] {} to[C, n=c mem] ++(0.0, 1.4) coordinate (mem);
+	\node[right, align=left, xshift=2ex] at (c mem) {\namevalue{$C_\text{mem}$}{\SI{4.7}{\micro\nothing}}};
+	\draw (mem) to[short, -o] ++(1.2, 0.0) node[right] {$V_\text{mem}$};
+	% \draw (mem) to[short, *-] ++(-2.0, 0.0) to[potentiometer, n=poti 1] ++(0.0, -1.4) coordinate (tmp);
 
-	\draw (mem) to[short, *-] ++(-2.0, 0.0) to[potentiometer, n=poti 1] ++(0.0, -1.4) coordinate (tmp);
-	\draw (mem) to[short, -o] ++(1.0, 0.0) node[right] {$V_\text{mem}$};
-	\draw (poti 1.wiper) to[short, -*] (poti 1.wiper |- mem);
-	\draw (tmp) node[op amp, anchor=out, scale=0.8, yscale=-1] (buffer) {};
-	\draw (buffer.out) to[short, *-] ++(0.0, -1.0) coordinate (tmp) to (tmp -| buffer.-) to (buffer.-);
+	\node[potentiometershape, anchor=right, yscale=-1] (poti 1) at ($(mem) + (-1.0, 0.0)$) {};
+	\node[above, align=center] at (poti 1.south) {\namevalue{$g_\text{leak}$}{$\SI{5}{\micro\nothing} .. \infty$}};
+	\draw (poti 1.right) to[short, -*] (mem);
+	\draw (poti 1.wiper) to ($(poti 1.wiper -| poti 1.right) + (0.2, 0.0)$) coordinate (tmp) to[short, -*] (tmp |- mem);
+	\draw (poti 1.left) to ++(-0.4, 0.0) coordinate (tmp);
+	\draw (tmp) node[op amp, anchor=out, scale=0.8] (buffer) {};
+	\draw (buffer.out) to[short, *-] ++(0.0, 1.0) coordinate (tmp) to (tmp -| buffer.-) to (buffer.-);
 
-	\draw (buffer.+) ++(-0.6, 0.7) to[potentiometer, n=poti 2] ++(0.0, -1.4);
+	\draw (buffer.+) ++(-1.4, 0.7) to[potentiometer, n=poti 2] ++(0.0, -1.4);
 	\draw (buffer.+) to (poti 2.wiper);
+ 	\node[above] at ($(buffer.+)!0.5!(poti 2.wiper)$) {$V_\text{leak}$};
 
 	\draw (poti 2.right) node[ground] {};
 	\draw (poti 2.left) node[vdd] {$V_\text{DD}$};
@@ -18,18 +25,22 @@
 	\draw (3.5, 0) node[right] {$V_\text{mem}$} to[short, o-] ++(-1.0, 0.0) to[potentiometer, n=poti 1, -*] ++(-1.4, 0.0) coordinate (tmp);
 
 	\draw (poti 1.left) to[short, -*] ++(0.3, 0.0) |- (poti 1.wiper);
+	\node[above, align=center] at (poti 1.south) {\namevalue{$g_\text{syn}$}{$\SI{50}{\micro\nothing} .. \infty$}};
 
 	\draw (tmp) to ++(0.0,  0.5) to[Tpmos, n=m2] ++(0.0,  1.6) node[vdd] {$V_\text{DD}$};
 	\draw (tmp) to ++(0.0, -0.5) to[Tnmos, n=m1, mirror] ++(0.0, -1.6) to ($(m1.G -| m1.D) + (0.0, -1.5)$) node[tlground] {};
 
 	\draw (m1.G) to ++(-1.9, 0.0) coordinate (tmp);
-	\draw (tmp) to[R, l_=\SI{100}{\kilo\nothing}, *-] ++(0.0, -1.5) node[tlground] {};
+	\draw (tmp) to[R, n=r2, *-] ++(0.0, -1.5) node[tlground] {};
 	\draw (tmp) to ++(-0.5, 0.0) to ++(0.0, 0.0) to[short, -o] ++(-0.5, 0.0) node[left] {inh. input};
 	
 	\draw (m2.G) node[invschmitt port, anchor=out] (inv) {};
 	\draw (inv.in) to (m2.G -| tmp) coordinate (tmp);
-	\draw (tmp) to[R, l_=\SI{100}{\kilo\nothing}, *-] ++(0.0, -1.5) node[tlground] {};
+	\draw (tmp) to[R, n=r1, *-] ++(0.0, -1.5) node[tlground] {};
 	\draw (tmp) to ++(-0.5, 0.0) to ++(0.0, -0.0) to[short, -o] ++(-0.5, 0.0) node[left] {exc. input};
+	
+	\node[left, align=right, xshift=-2ex] at (r1) {\namevalue{$R_\text{S1}$}{\SI{100}{\kilo\nothing}}};
+	\node[left, align=right, xshift=-2ex] at (r2) {\namevalue{$R_\text{S2}$}{\SI{100}{\kilo\nothing}}};
     },
     reset/.pic = {
 	% threshold comparator
@@ -44,7 +55,7 @@
 	\draw (refrac comp.-) to[short, -*] ++(2.0, 0.0) coordinate (tmp);
 	\draw (tmp) to[C, l_=\SI{1}{\micro\nothing}] ++(0.0, -1.4) node[ground] {};
 	\draw (tmp) to[short, -*] ++(1.0, 0.0) coordinate (tmp)
-		to[R, l=\SI{22}{\kilo\nothing}] ++(0.0,  1.4) node[vdd] {$V_\text{DD}$};
+		to[R, n=r5] ++(0.0,  1.4) node[vdd] {$V_\text{DD}$};
 
 	% transistor to initiate refractory period
 	\draw (tmp) to[Tnmos, n=m1] ++(0.0, -1.4) node[ground] {};
@@ -52,7 +63,7 @@
 
 	% reset transistor
 	\draw (refrac comp.out) to ++(-0.5, 0.0) node[nmos, anchor=G, xscale=-1.0, scale=0.82] (m2) {};
-	\draw (m2.D) to[R, l_=\SI{22}{\nothing}] ++(0.0, 1.4) to (m2.D |- thresh comp.-)
+	\draw (m2.D) to[R, n=r6] ++(0.0, 1.4) to (m2.D |- thresh comp.-)
 		edge (thresh comp.-)
 		to[short, *-o] ++(-1.0, 0.0) node[left] {$V_\text{mem}$};
 	\draw (m2.S) node[ground] {};
@@ -60,10 +71,17 @@
 	% resistor network determining threshold voltage
 	\draw (thresh comp.+) to[short, -*] ++(0.0, 1.5) coordinate (tmp);
 	\draw (tmp) to[short, -*] ++(-1.0, 0.0) coordinate (tmp left);
-	\draw (tmp left) to[R, l=\SI{100}{\kilo\nothing}] ++(0.0, 1.4) node[vdd] {$V_\text{DD}$};
-	\draw (tmp left) to[R, l_=\SI{100}{\kilo\nothing}] ++(0.0, -1.4) node[ground] {};
-	\draw (tmp) to[R, l=\SI{100}{\kilo\nothing}, -*] (tmp -| thresh comp.out) coordinate (tmp);
+	\draw (tmp left) to[R, n=r1] ++(0.0, 1.4) node[vdd] {$V_\text{DD}$};
+	\draw (tmp left) to[R, n=r2] ++(0.0, -1.4) node[ground] {};
+	\draw (tmp) to[R, n=r3, -*] (tmp -| thresh comp.out) coordinate (tmp);
 	\draw (tmp) to[short, -*] (thresh comp.out);
-	\draw (tmp) to[R, l_=\SI{10}{\kilo\nothing}] ++(0.0, 1.4) node[vdd] {$V_\text{DD}$};
+	\draw (tmp) to[R, n=r4] ++(0.0, 1.4) node[vdd] {$V_\text{DD}$};
+	
+	\node[left, align=right, xshift=-1ex] at (r1) {\namevalue{$R_\text{R1}$}{\SI{100}{\kilo\nothing}}};
+	\node[left, align=right, xshift=-1ex] at (r2) {\namevalue{$R_\text{R2}$}{\SI{100}{\kilo\nothing}}};
+	\node[above, align=center] at (r3.north) {\namevalue{$R_\text{R3}$}{\SI{100}{\kilo\nothing}}};
+	\node[right, align=left, xshift= 1ex] at (r4) {\namevalue{$R_\text{R4}$}{\SI{10}{\kilo\nothing}}};
+	\node[left, align=right, xshift=-1ex] at (r5) {\namevalue{$R_\text{R5}$}{\SI{22}{\kilo\nothing}}};
+	\node[left, align=right, xshift=-1ex] at (r6) {\namevalue{$R_\text{R6}$}{\SI{22}{\nothing}}};
     },
 }
