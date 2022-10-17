@@ -9,7 +9,7 @@ This can also be put in a circular shape where the activity travels indefinitely
 ![](figures/example-networks/synfirering.png)
 
 ## General hierarchical network
-![](doc/figures/example-networks/hierarchical.png)
+![](figures/example-networks/hierarchical.png)
 
 ## Solving the XOR problem rate based
 ![](figures/example-networks/hierarchical_xor.png)
