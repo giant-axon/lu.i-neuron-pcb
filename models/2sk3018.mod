@@ -3,50 +3,51 @@
 * All Rights Reserved
 * Commercial Use or
 * Resale Restricted
-* Date: 2009/04/07
+* Date: 2011/03/10
 ****************D G S
 .SUBCKT 2SK3018 2 3 1
 M1   11 22 3 3 MOS_N
 D1         3 1 DDS
-R1        1 11 RTH 3.53
-D2       11 21 DDG 4
-D3       22 21 DDG
-R2        2 22 3900
+R1        1 11 RTH 1.66
+D2       22 11 DDG
+R2        2 22 4600
 .MODEL MOS_N NMOS
 + LEVEL=3
 + L=2.0000E-6
 + W=.1
-+ KP=5.4841E-6
-+ RS=10.000E-3
++ KP=5.9021E-6
++ RS=2.0000
 + RD=0
 + VTO=1.4898
 + RDS=30.000E6
 + TOX=2.0000E-6
 + CGSO=62p
-+ CGDO=15p
++ CGDO=0
 + CBD=0
 + RG=0
 + N=2
 + RB=1.0000E-3
-+ GAMMA=1.4
++ GAMMA=0.8
 + ETA=0.0001
 + KAPPA=0
++ NFS=7G
 .MODEL DDS D
 + IS=33.796E-15
 + N=.99155
 + RS=.32279
 + IKF=15.202E-3
-+ CJO=14.243E-12
-+ M=.45123
-+ VJ=.54499
++ CJO=6.5074E-12
++ M=.18904
++ VJ=1.6498
 + BV=30
 + TT=38n
 .MODEL DDG D
-+ CJO=14.499E-12
-+ M=.73773
-+ VJ=.50846
++ CJO=13.100E-12
++ M=.58543
++ VJ=.75909
++ N=10000
++ FC=-10
 .MODEL RTH RES
-+ TC1=0.0035
-+ TC2=0.000009
++ TC1=0.0065
++ TC2=0.000025
 .ENDS 2SK3018
-

@@ -1,3 +1,10 @@
+.SUBCKT MCP6004 VOUTA VINAM VINAP VDD VINBP VINBM VOUTB VOUTC VINCM VINCP VSS VINDP VINDM VOUTD
+	XU1 VOUTA VSS VINAP VINAM VDD MCP6001
+	XU2 VOUTB VSS VINBP VINBM VDD MCP6001
+	XU3 VOUTC VSS VINCP VINCM VDD MCP6001
+	XU4 VOUTD VSS VINDP VINDM VDD MCP6001
+.ENDS 
+
 .SUBCKT MCP6001 5 4 1 2 3
 ********************************************************************************
 * Software License Agreement                                                   *
