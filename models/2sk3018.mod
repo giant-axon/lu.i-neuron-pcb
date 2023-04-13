@@ -5,7 +5,7 @@
 * Resale Restricted
 * Date: 2011/03/10
 ****************D G S
-.SUBCKT 2SK3018 2 3 1
+.SUBCKT 2SK3018 1 2 3
 M1   11 22 3 3 MOS_N
 D1         3 1 DDS
 R1        1 11 RTH 1.66
