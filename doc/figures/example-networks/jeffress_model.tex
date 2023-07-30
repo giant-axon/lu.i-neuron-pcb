@@ -1,0 +1,96 @@
+\documentclass[convert={density=300,outext=.png}]{standalone}
+\nonstopmode
+\input{preamble.tex}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    scale=1.,
+    >=latex,
+    transform shape,
+]
+    \def\numNeurons{4}
+    \def\scale{1.3}
+    \def\halfAngleConnection{10}
+    \def\angleNeuron{10}
+    \def\posXoffsetTop{-10.4}
+    \def\posXoffsetMiddle{-8.0}
+    \def\posXoffsetBottom{-3.4}
+    \def\lengthSeparation{3.5}
+    \def\angleOut{-20}
+    \def\angleIn{180}
+
+
+    % % draw ellipse on which the neurons lie
+    % \draw (0,0) ellipse (\axlengthA cm and \axlengthB cm );
+
+    % neurons
+    \foreach \i in {2,...,\numNeurons}
+    {
+        % delay Top
+        \pcbNeuron{nDelayTop-\i}{
+            \posXoffsetTop + \i * \lengthSeparation, 3
+        }{\scale}{\angleNeuron} ;
+        % delay bottm
+        \pgfmathsetmacro{\xPosition}{\posXoffsetBottom + (\numNeurons - \i) * \lengthSeparation}
+        \pcbNeuron{nDelayBottom-\i}{
+            \xPosition, -3
+        }{\scale}{\angleNeuron + 180} ;
+
+        % \node[neuronlabel, font=\sffamily\tiny, ] at (nDelayTop-\i) {nDelayTop-\i};
+        % \node[neuronlabel, font=\sffamily\tiny, ] at (nDelayBottom-\i) {nDelayBottom-\i};
+    }
+
+    % coincidence
+    \foreach \i in {1,...,\numNeurons}
+    {
+        \pcbNeuron{nCoinci-\i}{
+            \posXoffsetMiddle + \i * \lengthSeparation, 0
+        }{\scale}{\angleNeuron} ;
+
+        % \node[neuronlabel, font=\sffamily\tiny, ] at (nCoinci-\i) {nCoinci-\i};
+    }
+
+    % connections Delay
+    \foreach \i in {2,...,\numNeurons}
+    {
+        \pgfmathtruncatemacro\nexts{ifthenelse(\i==\numNeurons, 1, round(\i+1))}
+        \ifthenelse{\equal{\i}{\numNeurons}}{}{
+            \draw[connection] (nDelayTop-\i-Ab) to[out=\angleOut,in=\angleIn] (nDelayTop-\nexts-Db);
+            \draw[connection] (nDelayBottom-\i-Ab) to[out=\angleOut+180,in=\angleIn+180] (nDelayBottom-\nexts-Db);
+        }
+    }
+
+    % connections Top to coincidence
+    \foreach \i in {1,...,\numNeurons}
+    {
+        \ifthenelse{\equal{\i}{1}}{}{
+            \draw[connection] (nDelayTop-\i-Ac) to[out=\angleOut,in=\angleIn-70] (nCoinci-\i-Da);
+        }
+        \ifthenelse{\equal{\i}{\numNeurons}}{}{
+            \pgfmathtruncatemacro\nMinusI{round(\numNeurons-\i+1)}
+            \draw[connection] (nDelayBottom-\nMinusI-Ac) to[out=\angleOut+180,in=\angleIn+40] (nCoinci-\i-Dc);
+        }
+    }
+
+    % external stimulus
+
+    \coordinate (ears) at (0, -6);
+    \coordinate (cableIntermediateBottom) at ([yshift=0cm, xshift=2cm]nDelayBottom-2-Db);
+    \coordinate (cableIntermediateTop) at ([yshift=-2cm, xshift=-2cm]nDelayTop-2-Db);
+
+    \draw[connection] ([xshift=1mm]ears) to[out=90, in=-90] (cableIntermediateBottom) to[out=90,in=\angleIn+180] (nDelayBottom-2-Db);
+    \draw[connection] (cableIntermediateBottom) to[out=90,in=\angleIn+40] (nCoinci-4-Dc);
+
+    \draw[connection] ([xshift=-1mm]ears) to[out=90, in=-45] ([yshift=-0.5cm, xshift=-2cm]nDelayBottom-\numNeurons) to[out=-45+180, in=-90] (cableIntermediateTop) to[out=90,in=\angleIn] (nDelayTop-2-Db);
+    \draw[connection] (cableIntermediateTop) to[out=90,in=\angleIn-70] (nCoinci-1-Da);
+
+    \begin{scope}[on background layer]
+    	\node[minimum width=20cm, fit=(current bounding box.north west) (current bounding box.south east), inner sep=2pt, fill=white] {};
+    \end{scope}
+
+    \begin{scope}[on background layer]
+    	\node[minimum width=20cm, fit=(current bounding box.north west) (current bounding box.south east), inner sep=2pt, fill=white] {};
+    \end{scope}
+\end{tikzpicture}
+\end{document}
