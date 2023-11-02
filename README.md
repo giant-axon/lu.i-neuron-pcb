@@ -16,6 +16,8 @@ For inquiries feel free to contact us at [info@giantaxon.org](mailto:info@gianta
 - configurable leak potential and membrane time constant
 - three synapses with tunable weight and sign (excitatory or inhibitory)
 - three output terminals to forward spikes to other neurons
+- powered by a CR2032 coin battery
+- Arduino-compatible (5V-tolerant spike IO)
 - VU-meter-style visualization of the membrane potential and spike LED
 - optimized for low-cost production (~ 3 € per neuron)
 
