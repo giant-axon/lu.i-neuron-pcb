@@ -8,13 +8,21 @@ The neuron emits a short pulse whenever the membrane potential crosses a predefi
 Neurons communicate by exchanging these *spikes*.
 Multiple boards can be connected via jumper wires to form networks.
 
+<br/>
+
+For a more detailed write-up you may refer to our preprint manuscript:
+
+**Lu. i – A low-cost electronic neuron for education and outreach.**  
+Yannik Stradmann, Julian Göltz, Mihai A. Petrovici, Johannes Schemmel, Sebastian Billaudelle (2024).  
+[arXiv:2404.16664.](https://doi.org/10.48550/arXiv.2404.16664)
+
 For inquiries feel free to contact us at [info@giantaxon.org](mailto:info@giantaxon.org).
 
 ## Features
 
 - fully analog implementation of the leaky integrate-and-fire model
 - configurable leak potential and membrane time constant
-- three synapses with tunable weight and sign (excitatory or inhibitory)
+- three synapses with tunable weight and sign (excitatory or inhibitory) and shared synaptic time constant
 - three output terminals to forward spikes to other neurons
 - powered by a CR2032 coin battery
 - Arduino-compatible (5V-tolerant spike IO)
