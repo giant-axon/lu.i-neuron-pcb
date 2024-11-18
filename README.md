@@ -54,7 +54,7 @@ The LIF model, including the spiking behavior when the threshold is reached can 
 
 ## Circuits
 
-![schematics](doc/figures/pcb/overview.png)
+![schematics](doc/figures/lui_schematic.png)
 
 ---
 
