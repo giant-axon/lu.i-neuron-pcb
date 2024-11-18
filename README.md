@@ -57,6 +57,8 @@ The full schematics are given as KiCAD design files.
 
 ![schematics](doc/figures/lui_schematic.png)
 
+Besides the formation of synaptic connections between the individual neurons, inputs and outputs of each *Lu.i* can also be used to connect with a wide range of microcontrollers and sensors.
+Example code can be found in the [documentation](doc/). 
 
 ## Manufacturing
 The component choice in the *Lu.i* design is optimized for manufacturing at [JLCPCB](https://jlcpcb.com/).
