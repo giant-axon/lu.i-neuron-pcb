@@ -36,7 +36,7 @@ The following hierarchical network, e.g., implements an *exclusive OR* (XOR).
 
 ![](doc/figures/example-networks/hierarchical_xor.png)
 
-For a more extensive list of example networks please refer to [lu.i's documentation](doc/example-networks.md).
+For a more extensive list of example networks please refer to [Lu.i's documentation](doc/).
 
 
 ## Model
@@ -56,6 +56,13 @@ The following circuit diagram shows the different functional blocks of the analo
 The full schematics are given as KiCAD design files.
 
 ![schematics](doc/figures/lui_schematic.png)
+
+
+## Manufacturing
+The component choice in the *Lu.i* design is optimized for manufacturing at [JLCPCB](https://jlcpcb.com/).
+With every [release](../../releases/), we include all the design files necessary for production.
+Detailed instructions on the ordering process can be found in the [documentation](doc/).
+
 
 ---
 
