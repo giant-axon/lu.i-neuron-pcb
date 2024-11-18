@@ -1,4 +1,4 @@
-# Lu.i[¹](#footnote-1) – an educational neuron PCB
+# Lu.i[¹](#footnote-1) – An educational neuron PCB
 
 ![](doc/figures/animation/animation.webp)
 
@@ -19,7 +19,6 @@ Yannik Stradmann, Julian Göltz, Mihai A. Petrovici, Johannes Schemmel, Sebastia
 For inquiries feel free to contact us at [info@giantaxon.org](mailto:info@giantaxon.org).
 
 ## Features
-
 - fully analog implementation of the leaky integrate-and-fire model
 - configurable leak potential and membrane time constant
 - three synapses with tunable weight and sign (excitatory or inhibitory) and shared synaptic time constant
@@ -27,13 +26,12 @@ For inquiries feel free to contact us at [info@giantaxon.org](mailto:info@gianta
 - powered by a CR2032 coin battery
 - Arduino-compatible (5V-tolerant spike IO)
 - VU-meter-style visualization of the membrane potential and spike LED
-- optimized for low-cost production (~ 3 € per neuron)
+- optimized for low-cost production (~ 3 € per neuron)
 
 
 ## Example Networks
-
-Very much resembling the structure of the nervous system, multiple *lu.i* boards can be connected to form even complex neural networks.
-The latter may simply serve illustrative purposes, mimick biological behavior, or even solve functional tasks.
+Resembling the structure of the nervous system, multiple *Lu.i* boards can be connected to form complex neural networks.
+They may be used for illustrative purposes, mimicking biological behavior, or even solving functional tasks.
 The following hierarchical network, e.g., implements an *exclusive OR* (XOR).
 
 ![](doc/figures/example-networks/hierarchical_xor.png)
@@ -46,13 +44,16 @@ The neuron implemented on the PCBs is called Leaky Integrate-and-Fire (LIF) mode
 For this model, the membrane voltage follows the dynamics described by the differential equation
 
 $$
-    C_\text{mem} \frac{\mathrm{d}V_\text{mem}}{\mathrm{d}t} = - g_\text{leak} \left(V_\text{mem} - V_\text{leak} \right) + I_{\text{syn}}.
+    \tau_\text{mem} \frac{\mathrm{d}V_\text{mem}}{\mathrm{d}t} = - \left(V_\text{mem} - V_\text{leak} \right) + I_{\text{syn}} / g_\text{leak}.
 $$
 
 In short, the neuron sums up its input $I_\text{syn}$ and decays back to the leak voltage $V_\text{leak}$.
-The LIF model, including the spiking behavior when the threshold is reached can be implemented in electric circuits.
+The LIF model, including the spiking behavior when the threshold is reached, is implemented in electric circuits.
 
-## Circuits
+
+## Electronic Implementation
+The following circuit diagram shows the different functional blocks of the analog implementation on *Lu.i*.
+The full schematics are given as KiCAD design files.
 
 ![schematics](doc/figures/lui_schematic.png)
 
