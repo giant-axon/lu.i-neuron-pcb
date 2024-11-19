@@ -27,7 +27,7 @@
         \pgfmathsetmacro\posYtmp{0 + \lengthSeparation * (\i - (\numNeuronsI + 1) / 2)}
         \pcbNeuron{neuron-I\i}{
             \posXI, \posYtmp
-            }{\scale}{\angleNeuron} ;
+        }{\scale}{\angleNeuron}{}{}{};
     }
 
     \foreach \i in {1,...,\numNeuronsH}
@@ -35,7 +35,7 @@
         \pgfmathsetmacro\posYtmp{0 + \lengthSeparation * (\i - (\numNeuronsH + 1) / 2)}
         \pcbNeuron{neuron-H\i}{
             \posXH, \posYtmp
-            }{\scale}{\angleNeuron} ;
+        }{\scale}{\angleNeuron}{}{}{};
 
     }
 
@@ -44,7 +44,7 @@
         \pgfmathsetmacro\posYtmp{0 + \lengthSeparation * (\i - (\numNeuronsO + 1) / 2)}
         \pcbNeuron{neuron-O\i}{
             \posXO, \posYtmp
-            }{\scale}{\angleNeuron} ;
+        }{\scale}{\angleNeuron}{}{}{};
     }
 
     % %%%%%%%%%%%%% connections

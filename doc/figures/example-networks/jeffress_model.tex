@@ -30,12 +30,12 @@
         % delay Top
         \pcbNeuron{nDelayTop-\i}{
             \posXoffsetTop + \i * \lengthSeparation, 3
-        }{\scale}{\angleNeuron} ;
+        }{\scale}{\angleNeuron}{}{}{};
         % delay bottm
         \pgfmathsetmacro{\xPosition}{\posXoffsetBottom + (\numNeurons - \i) * \lengthSeparation}
         \pcbNeuron{nDelayBottom-\i}{
             \xPosition, -3
-        }{\scale}{\angleNeuron + 180} ;
+        }{\scale}{\angleNeuron + 180}{}{}{};
 
         % \node[neuronlabel, font=\sffamily\tiny, ] at (nDelayTop-\i) {nDelayTop-\i};
         % \node[neuronlabel, font=\sffamily\tiny, ] at (nDelayBottom-\i) {nDelayBottom-\i};
@@ -46,7 +46,7 @@
     {
         \pcbNeuron{nCoinci-\i}{
             \posXoffsetMiddle + \i * \lengthSeparation, 0
-        }{\scale}{\angleNeuron} ;
+        }{\scale}{\angleNeuron}{}{}{};
 
         % \node[neuronlabel, font=\sffamily\tiny, ] at (nCoinci-\i) {nCoinci-\i};
     }

@@ -12,10 +12,28 @@
 \usepgflibrary{decorations.pathmorphing}
 \usepgflibrary{decorations.markings}
 
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{sansmathfonts}
+
 \usepackage{rotating}
 
 \definecolor{pcbcolour}{RGB}{90, 32, 90}
+\definecolor{VULEDon}{RGB}{255, 128, 0}
+\definecolor{VULEDoff}{RGB}{229, 207, 184}
+% \colorlet{VULEDoff}{VULEDon!0.9!white}%
 
+
+% for organising the multi-panel figures
+% \tikzset{panel/.style={inner sep=0pt, }};
+% \tikzset{panellabel/.style={anchor=north west, inner sep=0pt, font={\bfseries\sffamily}}};
+\tikzstyle{panel} = [
+    inner sep=0pt,
+]
+\tikzstyle{panellabel} = [
+    anchor=north west,
+    inner sep=0pt,
+    font={\bfseries\sffamily},
+]
 \definecolor{cExcitatory}{RGB}{255, 77, 77}
 \definecolor{cInhibitory}{RGB}{0, 51, 204}
 \definecolor{cBGInhibitory}{RGB}{153, 194, 255}
@@ -49,12 +67,106 @@
     font=\sffamily\small,
     ]
 
-\newcommand{\pcbNeuron}[4]{
+\newcommand{\ledVU}[7]{
+    % macro for sketch used in overviews
+    % arg1: name of nodes
+    % arg2: position of node 
+    % arg3: argScale
+    % arg4: how many membrane lights are on
+    % arg5: is spikeLED on
+    % arg6: fill bkgnd
+    % arg7: draw
+    % %%%%%%%%%%%%% draw stuff
+    \ifthenelse{ \equal{#3}{} }{
+        \def\argScale{1}
+    }{
+        \def\argScale{#3}
+    }
+    \pgfmathsetmacro\halfWidth{0.4mm * \argScale}
+    \pgfmathsetmacro\segmentHalfHeight{0.4mm * \argScale}
+    \pgfmathsetmacro\segmentSeparation{0.3mm * \argScale}
+    \def\spikeSeparation{2.5}  % in fractions of segment separation
+    \def\LEDseparation{0.2mm * \argScale}
+
+    \pgfmathsetmacro\totalHeight{\segmentHalfHeight*2*7 + \segmentSeparation * (5 + \spikeSeparation) + 2 * \LEDseparation}
+    \coordinate (#1) at (#2);
+    \coordinate (#1-bottom) at ([yshift=-\totalHeight]#1);
+    \coordinate (#1-bottomL) at ([xshift=-\halfWidth - \LEDseparation]#1-bottom);
+    \coordinate (#1-bottomR) at ([xshift=\halfWidth + \LEDseparation]#1-bottom);
+    \coordinate (#1-L) at ([xshift=-\halfWidth - \LEDseparation]#1);
+    \coordinate (#1-R) at ([xshift=\halfWidth + \LEDseparation]#1);
+    
+    \def\VULEDon{VULEDon}
+    \def\VULEDoff{VULEDoff}
+
+    \ifthenelse{ \equal{#6}{} }{ \def\optBknd{none} }{ \def\optBknd{pcbcolour} }
+    \ifthenelse{ \equal{#7}{} }{ \def\optDraw{none} }{ \def\optDraw{pcbcolour} }
+    \draw [
+        shape=rectangle, anchor=center,
+        fill=\optBknd,
+        draw=\optDraw,
+        line width=0.4pt * \argScale,
+        % decorate, decoration={
+        %     zigzag,segment length=0.5mm * \argScale, amplitude=.04mm * \argScale
+        % },
+        % minimum width=2mm * \argScale, minimum height=8mm * \argScale,
+    ] (#1-L) rectangle (#1-bottomR);
+
+    % define coords
+    \foreach \i in {0,...,5}
+    {
+        \pgfmathsetmacro\height{\segmentHalfHeight*(2*\i+1)+ \segmentSeparation*\i + \LEDseparation};
+        \coordinate (#1-LED\i) at ([yshift=\height]#1-bottom);
+    };
+    \pgfmathsetmacro\height{\segmentHalfHeight*(2*6+1) + \segmentSeparation * (5 + \spikeSeparation) + \LEDseparation};
+    \coordinate (#1-LEDspike) at ([yshift=\height]#1-bottom);
+
+    % draw stuff
+    \foreach \i in {0,...,5}
+    {
+        \pgfmathsetmacro\iPlusOne{\i + 1};
+        \ifthenelse{\i < #4}{\def\state{VULEDon}}{\def\state{VULEDoff}}
+        \draw [
+            fill=\state,
+            draw=none,
+        ] ([xshift=-\halfWidth, yshift=-\segmentHalfHeight]#1-LED\i) rectangle ([xshift=\halfWidth, yshift=\segmentHalfHeight]#1-LED\i) ;
+        \ifthenelse{\i < #4}{
+            \foreach \a in {0, 45, 90, 135, ..., 360}
+            {
+            \draw[
+                rotate=\a,
+                shorten <=1pt,
+                draw=VULEDon,
+            ] (#1-LED\i) -- ++(0.08*\argScale, 0);
+            }
+        }{}
+    };
+    \ifthenelse{ \equal{#5}{} }{\def\state{VULEDoff}}{\def\state{VULEDon}}
+    \draw [
+        fill=\state,
+        draw=none,
+    ] ([xshift=-\halfWidth, yshift=-\segmentHalfHeight]#1-LEDspike) rectangle ([xshift=\halfWidth, yshift=\segmentHalfHeight]#1-LEDspike) ;
+    \ifthenelse{ \equal{#5}{} }{}{
+            \foreach \a in {0, 45, 90, 135, ..., 360}
+            {
+            \draw[
+                rotate=\a,
+                shorten <=1pt,
+                draw=VULEDon,
+            ] (#1-LEDspike) -- ++(0.08*\argScale, 0);
+            }
+    }
+}
+
+\newcommand{\pcbNeuron}[7]{
     % macro for sketch used in overviews
     % arg1: name of nodes
     % arg2: point of node 
     % arg3: argScale
     % arg4: rotation
+    % arg5: if nonempty, use only border shape of PCB
+    % arg6: if nonempty, draw LEDs (arg6 are on, if >6 spiking)
+    % arg7: if nonempty, draw tunabels
     % %%%%%%%%%%%%% draw stuff
 
     \ifthenelse{ \equal{#3}{} }{
@@ -70,6 +182,7 @@
 
     \coordinate (#1) at (#2);
 
+    % label coord
     \coordinate (#1-l) at ([yshift=0.4mm * \argScale, xshift=0.6mm * \argScale] #2);
 
     \node[anchor=center,
@@ -79,7 +192,11 @@
     {
         % \scaledWidth
         \scalebox{\argScale}{
-            \includesvg[width=2cm]{neuron_filled.svg}
+            \ifthenelse{ \equal{#5}{} }{
+                \includesvg[width=2cm]{neuron_filled.svg}
+            }{
+                \includesvg[width=2cm]{neuron_border.svg}
+            }
         }
     };
 
@@ -108,4 +225,83 @@
     \pgfmathsetmacro{\lengthAcX}{1.120cm * \argScale}
     \pgfmathsetmacro{\lengthAcY}{-0.420cm * \argScale}
     \coordinate[rotate around={\rot:(#1)}]  (#1-Ac) at ([xshift=\lengthAcX, yshift=\lengthAcY] #1);
+
+    % %%%%%%%%%%%%%%%%%%% LEDs
+    \pgfmathsetmacro{\lengthLEDX}{0.770cm * \argScale}
+    \pgfmathsetmacro{\lengthLEDY}{-0.205cm * \argScale}
+    \pgfmathsetmacro{\newscaling}{\argScale * 0.8}  % isn't tex beautiful..
+    \coordinate[rotate around={\rot:(#1)}] (#1-LEDs) at ([xshift=\lengthLEDX, yshift=\lengthLEDY] #1);
+    \ifthenelse{ \equal{#6}{} }{}{
+        \ifthenelse{ #6 > 6}{
+            \node[rotate=244+\rot] (tmp) at (#1-LEDs) {
+                \begin{tikzpicture}[
+                ]
+                \ledVU{luiLED}{0, 0}{\newscaling}{0}{yes}{}{} ;
+                \end{tikzpicture}
+            };
+        }{
+            \node[rotate=244+\rot] (tmp) at (#1-LEDs) {
+                \begin{tikzpicture}[
+                ]
+                \ledVU{luiLED}{0, 0}{\newscaling}{#6}{}{}{} ;
+                \end{tikzpicture}
+            };
+        };
+    }
+
+    % %%%%%%%%%%%%%%%%%%% tunables
+    \pgfmathsetmacro{\lengthTunPotiRad}{1.29 * \argScale}
+    \pgfmathsetmacro{\lengthTunPotiScrew}{0.59 * \argScale}
+
+    \pgfmathsetmacro{\lengthTunVleakX}{-0.059cm * \argScale}
+    \pgfmathsetmacro{\lengthTunVleakY}{0.135cm * \argScale}
+    \pgfmathsetmacro{\lengthTunTaumX}{-0.059cm * \argScale}
+    \pgfmathsetmacro{\lengthTunTaumY}{0.029cm * \argScale}
+    \pgfmathsetmacro{\lengthTunTausX}{-0.059cm * \argScale}
+    \pgfmathsetmacro{\lengthTunTausY}{-0.076cm * \argScale}
+    \coordinate[rotate around={\rot:(#1)}] (#1-tun-v_leak) at ([xshift=\lengthTunVleakX, yshift=\lengthTunVleakY] #1);
+    \coordinate[rotate around={\rot:(#1)}] (#1-tun-taum) at ([xshift=\lengthTunTaumX, yshift=\lengthTunTaumY] #1);
+    \coordinate[rotate around={\rot:(#1)}] (#1-tun-taus) at ([xshift=\lengthTunTausX, yshift=\lengthTunTausY] #1);
+
+    % weight potis
+    \pgfmathsetmacro{\lengthTunWaX}{0.0cm * \argScale}
+    \pgfmathsetmacro{\lengthTunWaY}{0.264cm * \argScale}
+    \pgfmathsetmacro{\lengthTunWbX}{-0.329cm * \argScale}
+    \pgfmathsetmacro{\lengthTunWbY}{0.076cm * \argScale}
+    \pgfmathsetmacro{\lengthTunWcX}{-0.265cm * \argScale}
+    \pgfmathsetmacro{\lengthTunWcY}{-0.129cm * \argScale}
+    \coordinate[rotate around={\rot:(#1)}] (#1-tun-Wa) at ([xshift=\lengthTunWaX, yshift=\lengthTunWaY] #1);
+    \coordinate[rotate around={\rot:(#1)}] (#1-tun-Wb) at ([xshift=\lengthTunWbX, yshift=\lengthTunWbY] #1);
+    \coordinate[rotate around={\rot:(#1)}] (#1-tun-Wc) at ([xshift=\lengthTunWcX, yshift=\lengthTunWcY] #1);
+
+    % drawing
+    \ifthenelse{ \equal{#7}{} }{}{
+        \foreach \iOtherIterator in {v_leak, taum, taus, Wa, Wb, Wc}
+        {
+            \fill[black!30!white] (#1-tun-\iOtherIterator) circle (\lengthTunPotiRad pt) coordinate (tmp);
+            \draw[black!60!white, rotate around={\rot:(tmp)}] (tmp) ++ (-\lengthTunPotiScrew pt, 0) -- ++(2 * \lengthTunPotiScrew pt, 0);
+            \draw[black!60!white, rotate around={\rot:(tmp)}] (tmp) ++ (0, -\lengthTunPotiScrew pt) -- ++(0, 2 * \lengthTunPotiScrew pt);
+        };
+    }
+
+    % weight switches
+    \pgfmathsetmacro{\lengthTunWSaX}{-0.082cm * \argScale}
+    \pgfmathsetmacro{\lengthTunWSaY}{0.394cm * \argScale}
+    \pgfmathsetmacro{\lengthTunWSbX}{-0.412cm * \argScale}
+    \pgfmathsetmacro{\lengthTunWSbY}{0.153cm * \argScale}
+    \pgfmathsetmacro{\lengthTunWScX}{-0.329cm * \argScale}
+    \pgfmathsetmacro{\lengthTunWScY}{-0.276cm * \argScale}
+    \coordinate[rotate around={\rot:(#1)}] (#1-tun-WSa) at ([xshift=\lengthTunWSaX, yshift=\lengthTunWSaY] #1);
+    \coordinate[rotate around={\rot:(#1)}] (#1-tun-WSb) at ([xshift=\lengthTunWSbX, yshift=\lengthTunWSbY] #1);
+    \coordinate[rotate around={\rot:(#1)}] (#1-tun-WSc) at ([xshift=\lengthTunWScX, yshift=\lengthTunWScY] #1);
+
+    % drawing
+    \ifthenelse{ \equal{#7}{} }{}{
+        \foreach \iOtherIterator / \angleUnrotated in {WSa/81, WSb/4, WSc/60}
+        {
+            \pgfmathsetmacro{\angleRotated}{\angleUnrotated + \rot}
+            \fill[black!90!white, rotate around={\angleRotated:(#1-tun-\iOtherIterator)}] (#1-tun-\iOtherIterator) ++(-0.024*\argScale, 0.0) rectangle ++(0.047*\argScale, 0.118*\argScale);
+            \fill[black!30!white, rotate around={\angleRotated:(#1-tun-\iOtherIterator)}] (#1-tun-\iOtherIterator) ++(-0.079*\argScale, 0.0) rectangle ++(0.159*\argScale, 0.059*\argScale);
+        };
+    }
 }

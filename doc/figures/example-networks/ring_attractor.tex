@@ -38,19 +38,19 @@
 
         \pcbNeuron{nOrientation-\i}{
             {\angle}:\nOrientationRadius
-        }{\nOrientationScale}{\angle + \nOrientationAngle} ;
+        }{\nOrientationScale}{\angle + \nOrientationAngle}{}{}{};
         \node[neuronlabel] at (nOrientation-\i) {\textbf{O-\i}};
 
         \pcbNeuron{nInhib-\i}{
             {\angle}:\nInhibRadius
-        }{\scale}{\angle + \nInhibAngle} ;
+        }{\scale}{\angle + \nInhibAngle}{}{}{};
 
         \pcbNeuron{nSwitch-\i}{
             {\angle + 180 / \numNeurons}:\nSwitchRadius
-        }{\scale}{\angle + \nSwitchAngle} ;
+        }{\scale}{\angle + \nSwitchAngle}{}{}{};
 
     }
-    \pcbNeuron{nTurn}{-8, 8}{\scale}{\nTurnAngle};
+    \pcbNeuron{nTurn}{-8, 8}{\scale}{\nTurnAngle}{}{}{};
     \node[neuronlabel, rotate=\nTurnAngle] at (nTurn-l) {turn};
 
 
