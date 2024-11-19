@@ -10,10 +10,15 @@
 \usetikzlibrary{fadings}
 \usetikzlibrary{decorations}
 \usepgflibrary{decorations.pathmorphing}
+\usepgflibrary{decorations.markings}
 
 \usepackage{rotating}
 
 \definecolor{pcbcolour}{RGB}{90, 32, 90}
+
+\definecolor{cExcitatory}{RGB}{255, 77, 77}
+\definecolor{cInhibitory}{RGB}{0, 51, 204}
+\definecolor{cBGInhibitory}{RGB}{153, 194, 255}
 
 \tikzstyle{connection} = [
     line width=1.0pt,
@@ -24,6 +29,19 @@
     line width=0.5pt,
     preaction={draw,white,line width=1pt, line cap=round},
     line cap=round,
+    ]
+
+\tikzstyle{inhibitory} = [
+    line width=1.0pt,
+    color=cInhibitory,
+    preaction={draw,white,line width=2pt, line cap=round, -{Bar[scale=0.4,sep=-1.0pt]}},
+    -{Bar[scale=0.4,sep=-0.5pt]},
+    ]
+\tikzstyle{excitatory} = [
+    line width=1.0pt,
+    color=cExcitatory,
+    preaction={draw,white,line width=2pt, line cap=round, -{Latex[round, scale=0.6,sep=-1.8pt]}},
+    -{Latex[round, scale=0.6,sep=-0.4pt]},
     ]
 
 \tikzstyle{neuronlabel} = [

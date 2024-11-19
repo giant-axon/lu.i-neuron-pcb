@@ -1,0 +1,104 @@
+\documentclass[convert={density=300,outext=.png}]{standalone}
+\nonstopmode
+\input{preamble.tex}
+
+\begin{document}
+
+\begin{tikzpicture}[
+    scale=1.,
+    >=latex,
+    transform shape,
+    decoration={
+        markings,
+        mark=at position 0.5 with {\arrow{>}}},
+]
+    \def\numNeurons{3}
+    \def\scale{1.3}
+    \def\nOrientationScale{1.6}
+    \def\nOrientationRadius{6}
+    \def\nOrientationAngle{10}
+    \def\nInhibRadius{2.0}
+    \def\nInhibAngle{30}
+    \def\nSwitchRadius{5.5}
+    \def\nSwitchAngle{160}
+    \def\nTurnAngle{-20}
+
+    \tikzstyle{signalSelfExc} = [excitatory, solid]
+    \tikzstyle{signalToSwitch} = [excitatory, loosely dashdotted]
+    \tikzstyle{signalSwitch} = [excitatory, dotted]
+    \tikzstyle{signalToInhib} = [excitatory, dashed]
+    \tikzstyle{signalTurn} = [excitatory, solid]
+
+    \draw[draw=none, fill=cBGInhibitory!40] (0,0) circle (\nInhibRadius + \scale * 1.4);
+
+    % neurons
+    \foreach \i in {1,...,\numNeurons}
+    {
+        \pgfmathsetmacro\angle{360/\numNeurons * (\i-1) + 90}
+
+        \pcbNeuron{nOrientation-\i}{
+            {\angle}:\nOrientationRadius
+        }{\nOrientationScale}{\angle + \nOrientationAngle} ;
+        \node[neuronlabel] at (nOrientation-\i) {\textbf{O-\i}};
+
+        \pcbNeuron{nInhib-\i}{
+            {\angle}:\nInhibRadius
+        }{\scale}{\angle + \nInhibAngle} ;
+
+        \pcbNeuron{nSwitch-\i}{
+            {\angle + 180 / \numNeurons}:\nSwitchRadius
+        }{\scale}{\angle + \nSwitchAngle} ;
+
+    }
+    \pcbNeuron{nTurn}{-8, 8}{\scale}{\nTurnAngle};
+    \node[neuronlabel, rotate=\nTurnAngle] at (nTurn-l) {turn};
+
+
+
+    % connections
+    \foreach \i in {1,...,\numNeurons}
+    {
+        \pgfmathsetmacro\angle{360/\numNeurons * (\i-1) + 90}
+
+        \pgfmathtruncatemacro\iPlusOne{round(Mod(\i + 1 - 1, 3) + 1)}
+        \pgfmathtruncatemacro\iPlusTwo{round(Mod(\i + 2 - 1, 3) + 1)}
+        \pgfmathsetmacro\anglePlusOne{360/\numNeurons * (\iPlusOne-1) + 90}
+        \pgfmathsetmacro\anglePlusTwo{360/\numNeurons * (\iPlusTwo-1) + 90}
+
+        % self connections
+        \draw[signalSelfExc, postaction={decorate}] (nOrientation-\i-Aa) to[out=\angle + \nOrientationAngle-30,in=\angle + \nOrientationAngle+180-105] (nOrientation-\i-Da);
+
+        % inhibitory
+        \draw[inhibitory, postaction={decorate}] (nInhib-\i-Ab) to[out=\angle + \nInhibAngle,in=\angle + \nOrientationAngle+180] (nOrientation-\i-Db);
+
+        % to inhibitory
+        \draw[signalToInhib, postaction={decorate}] (nOrientation-\i-Ac)
+            to[out=\angle + \nOrientationAngle-30,
+                in=\angle-0] (\angle - 180 / \numNeurons:\nInhibRadius)
+            to[out=\angle-0+180,
+               in=\anglePlusTwo + \nOrientationAngle+180-70] (nInhib-\iPlusTwo-Da);
+        \draw[signalToInhib] (\angle - 180 / \numNeurons:\nInhibRadius)
+            to[out=\angle-0+180,
+               in=\anglePlusOne + \nOrientationAngle+180-70+ 90] (nInhib-\iPlusOne-Db);
+
+           % switch
+        \draw[signalSwitch, postaction={decorate}] (nSwitch-\i-Ab) to[out=\angle + \nOrientationAngle+\nSwitchAngle+180/\numNeurons - 100,in=\angle + \nOrientationAngle-30] (nOrientation-\iPlusOne-Dc);
+
+        % to switch
+        \draw[signalToSwitch, postaction={decorate}] (nOrientation-\i-Ab) to[out=\angle + \nOrientationAngle-30,in=\angle + \nOrientationAngle+\nSwitchAngle+180/\numNeurons + 120] (nSwitch-\i-Db);
+
+    }
+
+    % from turn
+    \draw[signalTurn, postaction={decorate}] (nTurn-Aa) to[out=\nTurnAngle - 20,in=180] ([yshift=1cm]nOrientation-1-Ab) to[out=0,in=0] (nSwitch-3-Dc);
+    \draw[signalTurn, postaction={decorate}] (nTurn-Ab) to[out=\nTurnAngle - 20,in=110]  (nSwitch-1-Dc);
+    \def\tmp{120}
+    \draw[signalTurn, postaction={decorate}] (nTurn-Ac) to[out=\nTurnAngle - 20,in=\tmp] ([xshift=-1cm]nOrientation-2-Ab) to[out=\tmp+180,in=200] (nSwitch-2-Dc);
+
+    \begin{scope}[on background layer]
+    	\node[minimum width=20cm, fit=(current bounding box.north west) (current bounding box.south east), inner sep=2pt,
+            fill=white,
+            ] {};
+    \end{scope}
+\end{tikzpicture}
+\end{document}
