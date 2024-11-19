@@ -6,7 +6,7 @@ Each *Lu.i* neuron receives synaptic stimuli and sends out spike events in the f
 Each efferent spike creates a low-impedance voltage pulse at the axonal terminal of *Lu.i*.
 These pulses are approximately 15 ms long and have a signal level of 2.5 V:
 
-<img src="figures/lui_output_trace.png" width="80%" alt="Lui output trace"/>
+<img src="figures/lui_output_trace.png" width="60%" alt="Lui output trace"/>
 
 ## Input signals
 *Lu.i* decodes any voltage pulses above 1.8 V as an input event.
