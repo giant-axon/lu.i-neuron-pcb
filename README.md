@@ -10,11 +10,12 @@ Multiple boards can be connected via jumper wires to form networks.
 
 <br/>
 
-For a more detailed write-up you may refer to our preprint manuscript:
+For a more detailed write-up you may refer to our manuscript:
 
 **Lu. i – A low-cost electronic neuron for education and outreach.**  
-Yannik Stradmann, Julian Göltz, Mihai A. Petrovici, Johannes Schemmel, Sebastian Billaudelle (2024).  
-[arXiv:2404.16664.](https://doi.org/10.48550/arXiv.2404.16664)
+Yannik Stradmann, Julian Göltz, Mihai A. Petrovici, Johannes Schemmel, Sebastian Billaudelle (2025)  
+Trends in Neuroscience and Education, Volume 38, 100248  
+[10.1016/j.tine.2025.100248](https://doi.org/10.1016/j.tine.2025.100248)
 
 For inquiries feel free to contact us at [info@giantaxon.org](mailto:info@giantaxon.org).
 
