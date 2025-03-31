@@ -210,7 +210,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "http://assets.nexperia.com/documents/data-sheet/BSS84.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -222,7 +222,7 @@
 				)
 			)
 		)
-		(property "Description" "-0.13A Id, -50V Vds, P-Channel MOSFET, SOT-23"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -294,7 +294,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "SOT?23*")
 		(path "/31fffb2d-4a01-4287-88bc-417fab6f3767")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -522,7 +524,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -546,7 +548,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/707739c7-147f-4b19-8b0d-7536b609a5d7")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -731,7 +735,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -755,7 +759,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/4992b735-dec7-4b05-ab01-d2194e6d2510")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -940,7 +946,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -964,7 +970,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/f8d99f19-88f4-4180-a781-6c3c9d8120b3")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -1149,7 +1157,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -1173,7 +1181,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/85a89b2e-7c5d-43ff-a2ce-c35d79f71470")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -1346,7 +1356,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "http://assets.nexperia.com/documents/data-sheet/BSS84.pdf"
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -1358,7 +1368,7 @@
 				)
 			)
 		)
-		(property "Description" "-0.13A Id, -50V Vds, P-Channel MOSFET, SOT-23"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -1430,7 +1440,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "SOT?23*")
 		(path "/714e6666-36e2-40ff-96e6-343a9e0cfec6")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -1657,7 +1669,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -1681,7 +1693,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/3f204b43-7d87-481a-866e-268690647b52")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -1866,7 +1880,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -1890,7 +1904,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/8c244619-f041-4eb6-b090-b51bc3b1beb5")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -2075,7 +2091,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -2099,7 +2115,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/aafe397a-b72c-4859-b1bf-532d98b73bf7")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -2284,7 +2302,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -2308,7 +2326,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/ec8cedfe-2d48-4cd2-88d4-3041c1418e59")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -2493,7 +2513,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -2517,7 +2537,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/2e3ff3a1-8349-4814-b6f3-b70f96bbbeb1")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -2702,7 +2724,7 @@
 				)
 			)
 		)
-		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -2774,7 +2796,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "SOT?23*")
 		(path "/a647ccf6-8992-4d49-a61c-8877ffdb8b8b")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -3001,7 +3025,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -3025,7 +3049,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/67943e07-8c27-45c7-b3f8-9bd85be36d3a")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -3210,7 +3236,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -3234,7 +3260,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/d38ce78e-2b51-4b52-8dcc-48073d7c4d93")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -3419,7 +3447,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -3443,7 +3471,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/1a7ce7cb-fc4e-4397-9d5e-9f3b970426a3")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -3628,7 +3658,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -3652,7 +3682,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/f6fb5b45-38b0-42ff-be6f-e6dcb69e19cc")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -3837,7 +3869,7 @@
 				)
 			)
 		)
-		(property "Description" "Light emitting diode, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -3897,7 +3929,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/8044156d-c2a6-460a-9ebb-037ff614bc58")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_circle
@@ -4095,7 +4129,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -4119,7 +4153,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/ff6a06ed-c1c9-491a-b2ee-5ed4030d67da")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -4304,7 +4340,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, double row, 02x01, this symbol is compatible with counter-clockwise, top-bottom and odd-even numbering schemes., script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" ""
 			(at 0 0 315)
 			(layer "F.Fab")
 			(hide yes)
@@ -4328,19 +4364,9 @@
 				)
 			)
 		)
-		(property "Sim.Enable" "0"
-			(at -44.772372 66.636812 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "04949eda-92e8-46e2-877e-6b9077d0dddd")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
+		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/89c3a48a-5639-4ffe-ad5d-bf1b165a1a79")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -4579,7 +4605,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -4603,7 +4629,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/02e63018-6649-4966-8b07-47c33abe3611")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -4788,7 +4816,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -4812,7 +4840,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/1ebfb454-a953-44a3-8164-3ca50c10e2f6")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -4997,7 +5027,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -5021,7 +5051,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/9ecb44ea-8638-4b2b-9a12-1d69d7952531")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -5206,7 +5238,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -5230,7 +5262,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/b1a80227-31e3-4d4f-a010-cc9bc46266aa")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -5415,7 +5449,7 @@
 				)
 			)
 		)
-		(property "Description" "Light emitting diode, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -5475,7 +5509,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/36f3cd8c-dede-453b-946e-c2012cb16a22")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_circle
@@ -5673,7 +5709,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -5697,7 +5733,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/ae76f76c-3c88-406b-a6cb-64d50bc09776")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -5882,7 +5920,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -5906,7 +5944,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/38256b16-a52f-4056-b0fb-29dc4314b406")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -6091,7 +6131,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -6115,7 +6155,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/6f1f19a2-0db8-42b4-9c62-7c5dd03faf2d")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -6300,7 +6342,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -6324,7 +6366,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/a290799d-17b7-445a-9a89-8564dc92e1b7")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -6509,7 +6553,7 @@
 				)
 			)
 		)
-		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -6581,7 +6625,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "SOT?23*")
 		(path "/b7855f02-4c90-46d6-a671-e2bb1d893a66")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -6808,7 +6854,7 @@
 				)
 			)
 		)
-		(property "Description" "Light emitting diode, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -6868,7 +6914,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/121612f5-aee1-4447-a5bb-88effafd8e7a")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_circle
@@ -7066,7 +7114,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -7090,7 +7138,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/ecb1c685-23ae-46f8-a1cb-3d0c11d98c86")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -7341,7 +7391,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -7365,7 +7415,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/fd482bf4-9a95-48b4-bc3b-6c1e3272be5b")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -7550,7 +7602,7 @@
 				)
 			)
 		)
-		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -7622,7 +7674,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "SOT?23*")
 		(path "/0f25f6bc-c365-4e1d-8eb5-028f0cbcafb1")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -7849,7 +7903,7 @@
 				)
 			)
 		)
-		(property "Description" "Potentiometer"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -7909,7 +7963,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Potentiometer*")
 		(path "/dab22377-4184-4a1e-8d44-8300bc008244")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -8068,7 +8124,7 @@
 				)
 			)
 		)
-		(property "Description" "Potentiometer"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -8128,7 +8184,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Potentiometer*")
 		(path "/f1908855-62bf-46fc-80ee-e7d5c4d9e24c")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -8287,7 +8345,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -8311,7 +8369,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/b0387fb6-37bf-4c2b-99fa-557beff92894")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -8484,7 +8544,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.st.com/resource/en/datasheet/lm139.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -8496,7 +8556,7 @@
 				)
 			)
 		)
-		(property "Description" "Quad Differential Comparators, SOIC-14/TSSOP-14"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -8568,7 +8628,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "SOIC*3.9x8.7mm*P1.27mm* TSSOP*4.4x5mm*P0.65mm*")
 		(path "/a8eac224-c1fc-4ea0-b7b7-8dfd63040dc4")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -8901,7 +8963,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -8925,7 +8987,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/ddc75060-8967-4b79-a3f8-6f3138ac5589")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -9110,7 +9174,7 @@
 				)
 			)
 		)
-		(property "Description" "Light emitting diode, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -9170,7 +9234,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/5a43e97e-1dc6-4bfc-9d0e-076e68c2a691")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_circle
@@ -9356,7 +9422,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -9368,7 +9434,7 @@
 				)
 			)
 		)
-		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -9440,7 +9506,9 @@
 				)
 			)
 		)
-		(path "/8f879970-4c5f-46db-a652-9866d1576f48")
+		(property ki_fp_filters "SOIC*3.9x8.7mm*P1.27mm* DIP*W7.62mm* TSSOP*4.4x5mm*P0.65mm* SSOP*5.3x6.2mm*P0.65mm* MSOP*3x3mm*P0.5mm*")
+		(path "/dfcd33b1-da48-4148-8f3a-1c1f666a41ff")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -9761,7 +9829,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -9773,7 +9841,7 @@
 				)
 			)
 		)
-		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -9845,7 +9913,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "SOT?23*")
 		(path "/6d32ac73-3897-496d-af27-0056b0195f9d")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -10140,7 +10210,7 @@
 				)
 			)
 		)
-		(property "Description" "Switch, single pole double throw"
+		(property "Description" ""
 			(at 0 0 245.5)
 			(layer "F.Fab")
 			(hide yes)
@@ -10225,6 +10295,7 @@
 			)
 		)
 		(path "/b132d85d-e20a-45a6-9c77-0f913c61ffe2")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_poly
@@ -10391,7 +10462,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -10415,7 +10486,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/112b3acc-bfad-416c-808b-a13e22fbf449")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -10588,7 +10661,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "http://assets.nexperia.com/documents/data-sheet/BSS84.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -10600,7 +10673,7 @@
 				)
 			)
 		)
-		(property "Description" "-0.13A Id, -50V Vds, P-Channel MOSFET, SOT-23"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -10672,7 +10745,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "SOT?23*")
 		(path "/e1aca558-9f2c-44e9-a392-d5e3b57a762a")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -10899,7 +10974,7 @@
 				)
 			)
 		)
-		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -10971,7 +11046,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "SOT?23*")
 		(path "/7d01fd2c-ddd9-4eda-9a35-5088030ba15e")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -11198,7 +11275,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -11222,7 +11299,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/b84c11fa-60b3-455b-9672-de5814381a93")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -11408,7 +11487,7 @@
 				)
 			)
 		)
-		(property "Description" "Switch, single pole double throw"
+		(property "Description" ""
 			(at 0 0 184)
 			(layer "F.Fab")
 			(hide yes)
@@ -11493,6 +11572,7 @@
 			)
 		)
 		(path "/79462c85-c670-47c4-be81-df3c3d631ee1")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_poly
@@ -11659,7 +11739,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, double row, 02x01, this symbol is compatible with counter-clockwise, top-bottom and odd-even numbering schemes., script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -11683,19 +11763,9 @@
 				)
 			)
 		)
-		(property "Sim.Enable" "0"
-			(at -12.7 110.49 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "d8f850b6-1324-43e8-b3be-f23c23b18dc3")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
+		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/d11374be-64c8-45da-9104-d6ec19aae980")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -11934,7 +12004,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -11958,7 +12028,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/94b4284a-35a8-40b5-a9b8-9c1374baff08")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -12143,7 +12215,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -12167,7 +12239,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/7bedda8a-181b-48fc-b207-de84085cdc1c")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -12352,7 +12426,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, double row, 02x03, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" ""
 			(at 0 0 336.8)
 			(layer "F.Fab")
 			(hide yes)
@@ -12369,18 +12443,6 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8ca635f3-201c-49f0-b779-b4aeb79c44e3")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Sim.Enable" "0"
-			(at -22.504314 60.559104 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "976545c7-0f5d-4ada-8f66-c7cd50a79318")
 			(effects
 				(font
 					(size 1 1)
@@ -12424,7 +12486,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/87e275ff-d260-4a2b-99d4-c2d487c7d549")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -12727,7 +12791,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -12751,7 +12815,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/ae4531da-466c-4c55-b833-72096078b1c5")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -12936,7 +13002,7 @@
 				)
 			)
 		)
-		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -13008,7 +13074,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "SOT?23*")
 		(path "/ac431e70-f328-4f86-8306-dce093ef6484")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -13235,7 +13303,7 @@
 				)
 			)
 		)
-		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -13307,7 +13375,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "SOT?23*")
 		(path "/2ffa2253-119f-4e89-a49c-e2f4c73de05f")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -13534,7 +13604,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -13558,7 +13628,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/a0664209-d213-4bdf-ad76-dfd7562ab67b")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -13743,7 +13815,7 @@
 				)
 			)
 		)
-		(property "Description" "Potentiometer"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -13803,7 +13875,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Potentiometer*")
 		(path "/78584f5f-8449-4314-bce3-49298a72f140")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -13962,7 +14036,7 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, double row, 02x01, this symbol is compatible with counter-clockwise, top-bottom and odd-even numbering schemes., script generated (kicad-library-utils/schlib/autogen/connector/)"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -13986,19 +14060,9 @@
 				)
 			)
 		)
-		(property "Sim.Enable" "0"
-			(at 151.13 77.734 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "165bc68e-32ab-4233-a8fd-66412904ff11")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
+		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/471755ca-270f-4b74-ba72-e5a5c9c677e8")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr through_hole)
 		(fp_line
@@ -14237,7 +14301,7 @@
 				)
 			)
 		)
-		(property "Description" "-0.13A Id, -50V Vds, P-Channel MOSFET, SOT-23"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -14309,7 +14373,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "SOT?23*")
 		(path "/b1d4d4d2-5f43-47fc-8af6-06c816143d0e")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -14536,7 +14602,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -14560,7 +14626,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/5b0ae875-edc1-429c-b0ab-ebf20d266423")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -14745,7 +14813,7 @@
 				)
 			)
 		)
-		(property "Description" "Light emitting diode, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -14805,7 +14873,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/2ca46f66-218e-49e1-bda2-c8e78d7e2c09")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_circle
@@ -15003,7 +15073,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -15027,7 +15097,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/b2fba6cb-1757-4c7c-9c5f-5aeb4ba5798c")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -15212,7 +15284,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -15236,7 +15308,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/2892950b-8637-4b58-b7f2-139f8d39883e")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -15409,7 +15483,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.st.com/resource/en/datasheet/lm139.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -15421,7 +15495,7 @@
 				)
 			)
 		)
-		(property "Description" "Quad Differential Comparators, SOIC-14/TSSOP-14"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -15493,7 +15567,9 @@
 				)
 			)
 		)
-		(path "/4c4d7922-83c3-4f30-be94-71f7f5720469")
+		(property ki_fp_filters "SOIC*3.9x8.7mm*P1.27mm* TSSOP*4.4x5mm*P0.65mm*")
+		(path "/618f8c99-8c65-49dd-bd55-76a949890f54")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -15827,7 +15903,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -15851,7 +15927,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/a062ebb6-44d2-4b4a-813c-a36ddda93c0c")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -16036,7 +16114,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -16060,7 +16138,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/fb557078-b673-4207-9345-2c09cb50d657")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -16245,7 +16325,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
@@ -16269,7 +16349,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/a747cd5c-053a-44cf-9b8d-7b477bd5d80b")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -16454,7 +16536,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -16478,7 +16560,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/c07957a3-310d-4f65-b842-4174337044fe")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -16663,7 +16747,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -16687,7 +16771,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/ff8bb82a-4262-400b-bb50-8edd678abb22")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -16872,7 +16958,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -16896,7 +16982,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/08bf7a4e-bf95-4e0f-932f-c01e09279eaa")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -17081,7 +17169,7 @@
 				)
 			)
 		)
-		(property "Description" "Potentiometer"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -17141,7 +17229,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Potentiometer*")
 		(path "/528df498-e823-453f-8b85-f99831c557a9")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -17300,7 +17390,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -17324,7 +17414,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/b8979730-023c-48c2-aa89-d068fb7a529f")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -17509,7 +17601,7 @@
 				)
 			)
 		)
-		(property "Description" "Light emitting diode, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -17569,7 +17661,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/46222d9f-70d3-4abf-abe9-8da1f8cfd645")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_circle
@@ -17767,7 +17861,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -17791,7 +17885,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/e723871e-4acf-43e8-9650-3ba536817cfe")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -17976,7 +18072,7 @@
 				)
 			)
 		)
-		(property "Description" "Potentiometer"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -18036,7 +18132,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Potentiometer*")
 		(path "/d628edb3-ea19-471f-9d11-42a3154c6094")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -18195,7 +18293,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -18219,7 +18317,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/410a763f-93a1-47c9-9d3f-ce0ad0e6a368")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -18404,7 +18504,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -18428,7 +18528,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/1657d402-ab58-4b9d-9b40-2362d438b0cf")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -18613,7 +18715,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
@@ -18637,7 +18739,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/6b991020-df21-4903-9643-7a95c3357f3b")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -18822,7 +18926,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -18846,7 +18950,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/baa73619-a477-43aa-99e3-7ecd27b3489a")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -19031,7 +19137,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -19055,7 +19161,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/31b97d91-9dc5-4ae9-8501-6c3d49ba5c8f")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -19240,7 +19348,7 @@
 				)
 			)
 		)
-		(property "Description" "Light emitting diode, small symbol"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -19300,7 +19408,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "LED* LED_SMD:* LED_THT:*")
 		(path "/2b9a1c13-cf43-4d4b-ac82-8c331288f87d")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_circle
@@ -19498,7 +19608,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -19522,7 +19632,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/bfe860b8-5355-44b8-ac2d-f296011aae21")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -19707,7 +19819,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -19731,7 +19843,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/4e570727-90d5-4141-8a37-d7f26aa7d1ae")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -19916,7 +20030,7 @@
 				)
 			)
 		)
-		(property "Description" "0.115A Id, 60V Vds, N-Channel MOSFET, SOT-23"
+		(property "Description" ""
 			(at 0 0 45)
 			(layer "F.Fab")
 			(hide yes)
@@ -19988,7 +20102,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "SOT?23*")
 		(path "/8613d2ce-f46b-490a-a93d-337dfd1432d7")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -20216,7 +20332,7 @@
 				)
 			)
 		)
-		(property "Description" "Switch, single pole double throw"
+		(property "Description" ""
 			(at 0 0 260.25)
 			(layer "F.Fab")
 			(hide yes)
@@ -20301,6 +20417,7 @@
 			)
 		)
 		(path "/d093a52a-e0a9-42fa-834a-2eb30ebe8a4a")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_poly
@@ -20412,7 +20529,7 @@
 			(uuid "42048013-81dd-489d-a71c-9a039426b330")
 		)
 		(pad "NC" smd roundrect
-			(at 3.8 -0.600001 350.25)
+			(at 3.8 -0.600002 350.25)
 			(size 0.7 0.9)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.1111114286)
@@ -20467,7 +20584,7 @@
 				)
 			)
 		)
-		(property "Description" "Potentiometer"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -20527,7 +20644,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "Potentiometer*")
 		(path "/fd4436bf-341d-4b94-9773-fab2a61b962e")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -20686,7 +20805,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -20710,7 +20829,9 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/d64c26c7-bdc1-4439-ac5b-b6c6b69e3aff")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -20897,7 +21018,7 @@
 				)
 			)
 		)
-		(property "Description" "Switch, single pole double throw"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -20988,6 +21109,7 @@
 			)
 		)
 		(path "/ab1fe94a-9b4d-4c6b-bd86-7ebfbacb35d9")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -21061,14 +21183,12 @@
 			(at -2 -1.355 180)
 			(size 0.9 0.7)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net 2 "GND")
 			(uuid "b0aec64b-f808-417f-8f19-13451066565d")
 		)
 		(pad "NC" smd rect
 			(at 4 -1.355 180)
 			(size 0.9 0.7)
 			(layers "B.Cu" "B.Mask" "B.Paste")
-			(net 2 "GND")
 			(uuid "0c74254d-4bb4-4ebc-8f4e-780bd239921f")
 		)
 		(embedded_fonts no)
@@ -21125,7 +21245,7 @@
 				)
 			)
 		)
-		(property "Description" "Single-cell battery"
+		(property "Description" ""
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
@@ -21163,19 +21283,6 @@
 				(justify mirror)
 			)
 		)
-		(property "Sim.Enable" "0"
-			(at 166.84 133.35 0)
-			(layer "B.Fab")
-			(hide yes)
-			(uuid "165510d0-db2c-4499-b279-b051a5d7e2c1")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify mirror)
-			)
-		)
 		(property "Sim.Params" "type=\"R\" model=\"Battery_Cell\" lib=\"\""
 			(at 166.84 133.35 0)
 			(layer "B.Fab")
@@ -21203,6 +21310,7 @@
 			)
 		)
 		(path "/a4b3f64b-47e9-4e4c-8366-632639779a16")
+		(sheetname "/")
 		(sheetfile "neuron.kicad_sch")
 		(attr smd)
 		(fp_line
@@ -32622,24 +32730,24 @@
 				(xy 74.926249 51.779725) (xy 74.926249 51.779729) (xy 74.924474 51.849342) (xy 74.945325 51.920631)
 				(xy 74.957686 51.962893) (xy 75.025969 52.059511) (xy 75.121924 52.128723) (xy 75.188132 52.150286)
 				(xy 75.426346 52.191218) (xy 75.466802 52.216743) (xy 75.478262 52.252815) (xy 75.478262 52.730275)
-				(xy 75.459956 52.774469) (xy 75.371844 52.86258) (xy 75.32765 52.880886) (xy 75.283456 52.86258)
-				(xy 75.26515 52.818386) (xy 75.266052 52.807811) (xy 75.300005 52.610218) (xy 75.301922 52.561446)
-				(xy 75.288453 52.512044) (xy 75.2711 52.448393) (xy 75.207824 52.35886) (xy 75.203471 52.3527) (xy 75.107191 52.285908)
-				(xy 75.107189 52.285907) (xy 75.060578 52.271434) (xy 75.06056 52.27143) (xy 74.44727 52.166049)
-				(xy 74.447254 52.166047) (xy 74.422866 52.165088) (xy 74.39848 52.164129) (xy 74.398479 52.164129)
-				(xy 74.285427 52.194951) (xy 74.189735 52.262578) (xy 74.122943 52.358859) (xy 74.108469 52.405472)
-				(xy 74.108465 52.40549) (xy 73.969212 53.215895) (xy 73.969211 53.215905) (xy 73.967293 53.264682)
-				(xy 73.998115 53.377734) (xy 74.065745 53.473428) (xy 74.162025 53.54022) (xy 74.208639 53.554694)
-				(xy 74.491693 53.60333) (xy 74.507755 53.613464) (xy 74.525302 53.620732) (xy 74.527434 53.62588)
-				(xy 74.532149 53.628855) (xy 74.53634 53.647379) (xy 74.543609 53.664926) (xy 74.541476 53.670075)
-				(xy 74.542706 53.675511) (xy 74.525304 53.70912) (xy 74.464233 53.770193) (xy 74.420039 53.7885)
-				(xy 73.678438 53.7885) (xy 73.634244 53.770194) (xy 73.550723 53.686674) (xy 73.436555 53.628502)
-				(xy 73.341835 53.6135) (xy 73.341834 53.6135) (xy 72.103166 53.6135) (xy 72.103164 53.6135) (xy 72.008444 53.628502)
-				(xy 72.008443 53.628502) (xy 71.894276 53.686674) (xy 71.803674 53.777276) (xy 71.745502 53.891443)
-				(xy 71.745502 53.891444) (xy 71.7305 53.986164) (xy 71.7305 54.349835) (xy 71.745502 54.444555)
-				(xy 71.745502 54.444556) (xy 71.803674 54.558723) (xy 71.894277 54.649326) (xy 71.932699 54.668903)
-				(xy 71.963766 54.705277) (xy 71.960013 54.752965) (xy 71.948519 54.768785) (xy 71.12811 55.589194)
-				(xy 71.083916 55.6075) (xy 70.904352 55.6075) (xy 70.904346 55.607501) (xy 70.813136 55.621946)
+				(xy 75.459956 52.774469) (xy 75.371845 52.862579) (xy 75.327651 52.880885) (xy 75.283457 52.862579)
+				(xy 75.265151 52.818385) (xy 75.266053 52.807811) (xy 75.300006 52.610218) (xy 75.301923 52.561446)
+				(xy 75.288454 52.512044) (xy 75.271101 52.448393) (xy 75.207825 52.35886) (xy 75.203472 52.3527)
+				(xy 75.107192 52.285908) (xy 75.10719 52.285907) (xy 75.060579 52.271434) (xy 75.060561 52.27143)
+				(xy 74.447271 52.166049) (xy 74.447255 52.166047) (xy 74.422867 52.165088) (xy 74.398481 52.164129)
+				(xy 74.39848 52.164129) (xy 74.285428 52.194951) (xy 74.189736 52.262578) (xy 74.122944 52.358859)
+				(xy 74.10847 52.405472) (xy 74.108466 52.40549) (xy 73.969213 53.215895) (xy 73.969212 53.215905)
+				(xy 73.967294 53.264682) (xy 73.998116 53.377734) (xy 74.065746 53.473428) (xy 74.162026 53.54022)
+				(xy 74.20864 53.554694) (xy 74.491693 53.60333) (xy 74.507755 53.613464) (xy 74.525302 53.620732)
+				(xy 74.527434 53.62588) (xy 74.532149 53.628855) (xy 74.53634 53.647379) (xy 74.543609 53.664926)
+				(xy 74.541476 53.670075) (xy 74.542706 53.675511) (xy 74.525304 53.70912) (xy 74.464233 53.770193)
+				(xy 74.420039 53.7885) (xy 73.678438 53.7885) (xy 73.634244 53.770194) (xy 73.550723 53.686674)
+				(xy 73.436555 53.628502) (xy 73.341835 53.6135) (xy 73.341834 53.6135) (xy 72.103166 53.6135) (xy 72.103164 53.6135)
+				(xy 72.008444 53.628502) (xy 72.008443 53.628502) (xy 71.894276 53.686674) (xy 71.803674 53.777276)
+				(xy 71.745502 53.891443) (xy 71.745502 53.891444) (xy 71.7305 53.986164) (xy 71.7305 54.349835)
+				(xy 71.745502 54.444555) (xy 71.745502 54.444556) (xy 71.803674 54.558723) (xy 71.894277 54.649326)
+				(xy 71.932699 54.668903) (xy 71.963766 54.705277) (xy 71.960013 54.752965) (xy 71.948519 54.768785)
+				(xy 71.12811 55.589194) (xy 71.083916 55.6075) (xy 70.904352 55.6075) (xy 70.904346 55.607501) (xy 70.813136 55.621946)
 				(xy 70.703204 55.677959) (xy 70.615959 55.765204) (xy 70.559947 55.875133) (xy 70.559944 55.875143)
 				(xy 70.545501 55.966333) (xy 70.5455 55.966348) (xy 70.5455 56.297648) (xy 70.545501 56.297653)
 				(xy 70.559946 56.388863) (xy 70.615959 56.498795) (xy 70.703204 56.58604) (xy 70.703739 56.586313)
@@ -34646,9 +34754,9 @@
 		(filled_polygon
 			(layer "F.Cu")
 			(pts
-				(xy 105.356845 68.424552) (xy 105.418157 68.480288) (xy 105.42887 68.493174) (xy 105.428958 68.493092)
+				(xy 105.117213 68.206714) (xy 105.418157 68.480288) (xy 105.42887 68.493174) (xy 105.428958 68.493092)
 				(xy 105.43742 68.502167) (xy 105.454697 68.514606) (xy 105.454696 68.514606) (xy 105.460525 68.518802)
-				(xy 105.481579 68.537942) (xy 105.492625 68.541913) (xy 106.004611 68.910521) (xy 106.89533 69.551801)
+				(xy 105.481579 68.537942) (xy 105.492625 68.541913) (xy 106.476614 69.250343) (xy 106.89533 69.551801)
 				(xy 106.906607 69.562862) (xy 106.907257 69.562139) (xy 106.916493 69.570426) (xy 106.916495 69.570429)
 				(xy 106.916497 69.57043) (xy 106.93829 69.583345) (xy 106.947673 69.589486) (xy 106.968238 69.604292)
 				(xy 106.968241 69.604294) (xy 106.968243 69.604294) (xy 106.979533 69.60944) (xy 106.979129 69.610326)
